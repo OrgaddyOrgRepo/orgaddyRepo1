@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Search Page">
+        
+        <lightning-radio-group name="radioGroup"
+        label="Radio Group"
+        options={options}
+         value = {radioInput}
+        type="radio"
+        onchange={radioInputHandler}></lightning-radio-group>
+
+        <div class="slds-p-around_medium">
+            <lightning-input label ="Search Bar" type="search" value={value} onchange={searchInputChangeHandler}></lightning-input>
+        </div>
+        <template if:true={soqlSearchFlag}>
+            <div class="slds-p-top_x-large">
+                <lightning-datatable 
+                key-field="id"
+                columns = {mycolumns}
+                data ={data}
+                >
+    
+                </lightning-datatable>
+            </div>
+        </template>
+        <template if:false={soqlSearchFlag}>
+            <em>Aaabe leka kaahi t kar tond kaa pahundraayla...</em>
+        </template>
+        
+    </lightning-card>
+
+
+</template>

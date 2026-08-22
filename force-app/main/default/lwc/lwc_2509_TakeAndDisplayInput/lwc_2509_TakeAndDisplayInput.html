@@ -1,0 +1,49 @@
+<template>
+<lightning-layout>
+    <lightning-layout-item size="6">
+    <div style="margin-left:5% ; margin-right:5%; padding: 10px 10px 10px 10px;background-color:lightpink;">
+        <lightning-card>
+            <div style="margin-left:5% ; margin-right:5%; padding: 10px 10px 10px 10px;">
+                    <lightning-input label="First Number : " onchange={inp1} type="decimal" data-name="input1"></lightning-input>
+                    <lightning-input label="Second Number : " onchange={inp2} type="decimal" data-name="input2"></lightning-input>
+                    <lightning-input label="Third Number : " onchange={inp3} type="decimal" data-name="input3"></lightning-input>
+        
+
+                <lightning-button-group>
+                    <lightning-button label="Calculate Greatest" variant="brand-outline" onclick={calculate_greatest}></lightning-button>
+                    <lightning-button label="Calculate Smallest" variant="submit" onclick={calculate_smallest}></lightning-button>
+                    <!-- sldsValidatorIgnoreNextLine -->
+                    <lightning-button-icon icon-name="utility:bug"  size="large" title="Clear ALL"  onclick={clear_all}>Clear All</lightning-button-icon>
+                </lightning-button-group>
+            </div>
+         </lightning-card>
+</div>
+</lightning-layout-item>
+
+<template if:true={null_input}>
+<template if:true={flag} >
+    <lightning-layout-item size="3">
+            <div style="margin-left:5% ; margin-right:5%; padding: 10px 10px 10px 10px;background-color:rgb(80, 214, 143);">
+                <lightning-card>
+                    The First Number is  : {num1} <p></p>
+                    The Second NUmber is : {num2} <p></p>
+                    The Third NUmber is  : {num3} <p></p>
+                    <p></p>
+                
+                </lightning-card>
+            </div>
+    </lightning-layout-item>
+    <lightning-layout-item size="3">
+        <div style="margin-left:5%;margin-right:5%; padding: 10px 10px 10px 10px;background-color:mediumpurple;">
+            <lightning-card>
+                The Greatest number is : {greatestnum} <br/>
+                The Smallest number is : {smallestnum} <br/>
+                <br/>
+        </lightning-card>
+        </div>
+    </lightning-layout-item>
+
+</template>
+</template>
+</lightning-layout>
+</template>

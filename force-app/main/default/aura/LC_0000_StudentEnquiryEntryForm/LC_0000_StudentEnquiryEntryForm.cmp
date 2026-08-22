@@ -1,0 +1,35 @@
+<aura:component implements="force:hasRecordId">
+<div class="Cardy">
+<lightning:card title="Entry Form">
+        <div class="Inputy" >
+            <lightning:recordEditForm objectApiName="Student_Enquiry__c"  recordId="{!v.recordId}">
+            <lightning:inputField fieldName="Candidate_Name__c"/>
+            <lightning:inputField fieldName="Guardian__c"/>
+            <lightning:inputField fieldName="Guardian_Name__c"/>
+            <lightning:inputField fieldName="Mother_Occupation__c"/>
+            <lightning:inputField fieldName="Father_Occupation__c"/>
+            <lightning:inputField fieldName="Gender__c"/>
+            <lightning:inputField fieldName="Address_For_Correspondence__c"/>
+            <lightning:inputField fieldName="Age__c"/>
+
+            <lightning:inputField fieldName="Course__c"/>
+            <lightning:inputField fieldName="Date_Of_Birth__c"/>
+            <lightning:inputField fieldName="Email__c"/>
+            <lightning:inputField fieldName="Educational_Qualification__c"/>
+            <lightning:inputField fieldName="Family_Annual_Income__c"/>
+            <lightning:inputField fieldName="Father_Mobile_No__c"/>
+            <lightning:inputField fieldName="Interested_Course_1__c"/>
+            <lightning:inputField fieldName="Interested_Course_2__c"/>
+            <lightning:inputField fieldName="Mobile_No__c"/>
+            <lightning:inputField fieldName="Other_Interested_Course__c"/>
+            <lightning:inputField fieldName="Passed_Out_Organisation__c"/>
+            <lightning:inputField fieldName="Passport_No__c"/>
+            <lightning:inputField fieldName="Permanent_Address__c"/>
+            <lightning:inputField fieldName="Proofs_Submitted__c"/>
+            <lightning:inputField fieldName="Year_Of_Pass__c"/>
+             
+        </lightning:recordEditForm>
+    </div>
+    </lightning:card>
+</div>  
+</aura:component>

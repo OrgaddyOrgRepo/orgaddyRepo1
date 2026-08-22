@@ -1,0 +1,16 @@
+<aura:component  >
+    <lightning:button label="Base Button" variant="base"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <lightning:button label="Success Button" variant="success"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <lightning:button label="Destructive Button" variant="destructive"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <lightning:button label="Bugs Here" iconName="utility:bug" />
+ <lightning:buttonGroup>
+    <lightning:buttonIcon iconClass="myClass"  iconName="utility:people" alternativeText="The Button" onclick="{!c.Alert}" />   
+    <br/> <!--label and  iconPositon is Not Supported By ButtonIcon -->
+    <lightning:buttonIcon  iconName="utility:currency_input" accessKey="enter" alternativeText="Access" size="larger" onclick="{!c.Alert}"/>
+ </lightning:buttonGroup>  
+    
+    
+    <br/>
+    <br/>
+    <lightning:buttonStateful labelWhenOff="Follow" labelWhenOn="Following" labelWhenHover="Unfollow"/>
+</aura:component>

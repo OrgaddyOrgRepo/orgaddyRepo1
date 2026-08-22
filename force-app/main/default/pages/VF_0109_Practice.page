@@ -1,0 +1,32 @@
+<apex:page standardController="Account">
+<script>
+function colorPageBlock(pageblock, color) {
+if (pageblock != null) pageblock.style.cssText = “background-color: ” + color + “;”;
+
+}
+</script>
+<apex:form >
+<apex:pageBlock title="My Content" mode="detail">
+<apex:pageBlockSection id="redSection" title="My Content Section" columns="2">
+<apex:inputField value="{!account.name}"/>
+<script>
+    colorPageBlock(document.getElementById("{!$Component.redSection}"), "red");
+    </script>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection id="greenSection" title="My Content Section" columns="2">
+<apex:inputField value="{!account.name}"/>
+<script>colorPageBlock(document.getElementById("{!$Component.greenSection}"), "green");</script>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection id="orangeSection" title="My Content Section" columns="2">
+<apex:inputField value="{!account.name}"/>
+	<script>
+    colorPageBlock(document.getElementById("{!$Component.orangeSection}"), "orange");
+    </script>
+ </apex:pageBlockSection>
+</apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

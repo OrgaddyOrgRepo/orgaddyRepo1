@@ -1,0 +1,65 @@
+<apex:page controller="CL_Eval_GnSnSI" sidebar="false" showHeader="False">
+	<apex:form >
+        <apex:tabpanel >
+             <apex:tab >
+    <apex:pageBlock >
+        <p style="color:IndianRed; text-align:Center;font-size:29px;font-style:san serif,Itallic;" >
+            <em> Evaluator</em>
+           <p style="font-size:24px;color:Purple;text-align:center;">(Greatest Or Smaller Number)</p> 
+        
+        </p>
+      
+        <apex:pageBlockSection title="Enter the Numbers" columns="1" >
+            	<apex:pageBlockSectionItem >
+            		<apex:outputLabel >First Number</apex:outputLabel>
+            		<apex:inputText value="{!Num1}"/>
+                </apex:pageBlockSectionItem>
+            
+            	<apex:pageBlockSectionItem >
+            		<apex:outputLabel >Second Number</apex:outputLabel>
+            		<apex:inputText value="{!Num2}"/>
+                </apex:pageBlockSectionItem>
+            	
+            	<apex:pageBlockSectionItem >
+            		<apex:outputLabel >Third Number : </apex:outputLabel>
+            		<apex:inputText value="{!Num3}"/>
+                </apex:pageBlockSectionItem>
+            <apex:selectradio value="{!Choice}">
+                <apex:selectOption itemLabel="Greatest Number" itemValue="Greatest"/>
+                <apex:selectOption itemLabel="Smallest Number" itemValue="Smallest"/>
+            </apex:selectradio>
+            <br/>
+            <br/>
+            <apex:commandButton style="align:center;" value="Evaluate" action="{!EvaCalMain}" alt="Please Select thr Action through Radio Button...!!"/>
+            	<apex:pageblocksectionitem >
+            		<apex:outputLabel >The Result is : </apex:outputLabel>
+                    <apex:outputText value="{!Result}" />
+                    
+                </apex:pageblocksectionitem>    
+        </apex:pageBlockSection>
+
+    </apex:pageBlock>
+         </apex:tab>
+        
+    <br/>
+         <apex:tab >
+    <apex:pageblock >
+    <p style="color:Purple;font-size:29px; font-style:san-serif; text-align:center;">
+        <em>Calculation of Sum</em>
+        </p>
+    <apex:pageBlockSection title="Calculate Sum of Even or Odd Number upto a given Number">
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel >Enter a Number : </apex:outputLabel>
+            <apex:inputText value="{!Num}"/>
+        </apex:pageBlockSectionItem>
+        
+        <apex:commandButton value="Calculate" action="{!EvaCalMain}" alt="Kindly Enter A number..!"/>
+        <apex:outputText label="The Sum is : " value="{!sum}"/>
+    </apex:pageBlockSection>
+    
+    </apex:pageblock>
+    </apex:tab>
+
+		</apex:tabpanel>
+	</apex:form>
+</apex:page>

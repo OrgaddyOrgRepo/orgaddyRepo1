@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Account Search" icon-name="standard-account">
+        <lightning-input label="Enter Account Name" onchange={searchMe}></lightning-input>
+
+    </lightning-card>
+    <lightning-card title=" Related Contacts" icon-name="standard-contact">
+        <lightning-datatable key-field="id"
+        data={contactsList.data}
+        columns={col}
+        ></lightning-datatable>
+     </lightning-card>   
+
+</template>

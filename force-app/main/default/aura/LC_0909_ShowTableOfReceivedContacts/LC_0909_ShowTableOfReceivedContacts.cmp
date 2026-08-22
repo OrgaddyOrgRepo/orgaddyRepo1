@@ -1,0 +1,12 @@
+<aura:component controller="CL_0909_ContactRetrievalFromOrg" >
+    <aura:attribute name="receivedCon" type="Object" default="[]" />
+    <aura:attribute name="col" type="List"/>
+   
+    <aura:handler event="c:LE_0909_ReceiveContacts" action="{!c.TableFormat}"/>
+
+    <lightning:card title="Contact Table" iconName="standard:contact">
+    	<lightning:dataTable keyField="id" data="{!v.receivedCon}" columns="{!v.col}"/>
+  
+    </lightning:card>
+  
+</aura:component>

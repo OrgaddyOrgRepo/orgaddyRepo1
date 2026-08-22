@@ -1,0 +1,190 @@
+<apex:page Standardcontroller="Student_Enquiry__c" extensions="CL_0109_StudentEnquiryForm_Control">
+ <script type="text/javascript">  
+    function turnGreen(id) {
+               
+                var myPara = document.getElementById(id);
+                myPara.style.background = "green";
+                mypara.style.color="white";
+                
+            }
+    function turnPurple(id)
+    		{  
+                 var property = document.getElementById(id);
+                property.style.background = "purple";
+                property.style.color="white";
+            }
+    function turnYellow(id) {
+                
+                var myPara = document.getElementById(id);
+                myPara.style.background = "#c0c433";
+                mypara.style.color="white";
+        }
+        </script> 
+ <style>
+   body{ 
+     		background-image: url("{!$Resource.TechnicalWhite}");
+            overflow-x:hidden;
+     }
+   .bPageBlock{
+     background: #dcd8f3  !important; //#ffffcc #ccffcc #dcd8f3
+       border-top: 3px solid purple !important;
+       border-radius: 80px;
+      } 
+   .bPageBlockSection
+     { background: #red !important;
+        background-image:none !important;
+     	color: black !important;
+     }
+     
+    p{
+    font-size: 12px;
+    }
+    .title{ font-size:18px;
+    	font-style:sans-serif;
+    	}
+    .lineHeight
+    { line-height: 0.2;
+    }
+    .alignCenter
+    { align:center;
+    }
+      .TopBanner
+        { 
+        	align :center;
+        	margin-left: 5% ;
+        	margin-right:5% ;
+        }
+    
+         .button {
+                  padding: 5px 5px 5px 5px;
+                  
+                  text-align: center;
+                  cursor: pointer;
+                  outline: none;
+                  box-shadow: 0 5px #999;
+        		   }
+
+            .button:hover {background: #3e8e41}
+            
+            .button:active {
+              background: #3e8e41;
+              box-shadow: 0 5px #666;
+              transform: translateY(4px);
+            }
+</style>
+   
+    <apex:form >
+          <div style="margin-left:0%;margin-right:0%;">
+             
+       			 <apex:image value="{!$Resource.ByJus_Banner}" height="200" width="100%"/>
+           </div>
+       <span>
+              <apex:image value="{!$Resource.Student_Icon}" height="40" width="40"/>
+       </span>
+       <span style="font-size:22px;font-style:sans-serif;color:black;">
+                  New Candidate Enquiry
+            <apex:commandButton id="Button1" value="Save" action="{!SaveMeWithPageRef}" styleClass="button" 
+                                    style="background:purple;color:white;font-size:24px; border-radius: 15px;                                                                          width:120px;
+                                           height:40px;margin-left:690px;"
+                                   onmouseover="turnGreen('{!$Component.Button1}')"
+                                   onmouseout="turnPurple('{!$Component.Button1}')"/>
+                
+            <apex:commandButton id="Button2" value="Cancel" styleClass="button" action="{!CancelWithPageref}"
+                                    style="background:purple;color:white;font-size:24px; border-radius: 15px;                                                                          width:120px;
+                                           height:40px;margin-left:5px;"
+                                   onmouseover="turnYellow('{!$Component.Button2}')"
+                                onmouseout="turnPurple('{!$Component.Button2}')" immediate="true"/> 
+       </span>
+      <div style="top:0% left:50%; margin:10px 20px 20px 100px;">
+            <apex:commandButton id="Button3" value="Save and New" styleClass="button" 
+                                    style="background:purple;color:white;font-size:24px; border-radius: 15px;                                                                          width:120px;
+                                           height:40px;width:250px;margin-left:863px;"
+                                   onmouseover="turnGreen('{!$Component.Button3}')"
+                                   onmouseout="turnPurple('{!$Component.Button3}')"/> 
+         </div>
+               
+           
+       
+          
+         
+    <div style="margin-left:5%;margin-right:5%;">
+       
+    <apex:pageBlock mode="detail">
+        
+        <apex:pageblockSection title="Candidate Information" id="pbs1" columns="2" collapsible="false" >
+             <apex:inputField value="{!Student_Enquiry__c.Candidate_Name__c}" />
+             <apex:inputField value="{!Student_Enquiry__c.Gender__c}"/>
+             <apex:inputField value="{!Student_Enquiry__c.Guardian__c}"/>
+             <apex:inputField value="{!Student_Enquiry__c.Date_Of_Birth__c}"/>
+             <apex:inputField value="{!Student_Enquiry__c.Guardian_Name__c}"/>
+             <apex:inputField value="{!Student_Enquiry__c.Father_Occupation__c}"/>
+             <apex:inputField value="{!Student_Enquiry__c.Community__c}"/>
+             <apex:inputField value="{!Student_Enquiry__c.Mother_Occupation__c}"/>
+         <!--    <apex:inputField value="{!Student_Enquiry__c.Course__c}"/> -->
+             <apex:inputField value="{!Student_Enquiry__c.Family_Annual_Income__c}"/>
+             <apex:inputField value="{!Student_Enquiry__c.Proofs_Submitted__c}"/>
+             <br/>
+             <apex:inputField value="{!Student_Enquiry__c.Passport_No__c}"/>
+            
+        </apex:pageblockSection>
+        
+        <apex:pageBlockSection title="Educational Details" id="pbs2" columns="1" collapsible="false">
+              <apex:inputField value="{!Student_Enquiry__c.Educational_Qualification__c}"/>
+              <apex:inputField value="{!Student_Enquiry__c.Year_Of_Pass__c}"/>
+              <apex:inputField value="{!Student_Enquiry__c.Passed_Out_Organisation__c}"/>
+             
+        </apex:pageBlockSection>
+             
+        <apex:pageBlockSection title="Contact Details" id="pbs3" columns="2" collapsible="false">
+             <apex:inputField value="{!Student_Enquiry__c.Mobile_No__c}"/>
+             <apex:inputField value="{!Student_Enquiry__c.Father_Mobile_No__c}"/>
+             <apex:inputField value="{!Student_Enquiry__c.Address_For_Correspondence__c}"/>
+             <apex:inputField value="{!Student_Enquiry__c.Email__c}"/>
+             <apex:inputField value="{!Student_Enquiry__c.Permanent_Address__c}"/>
+        </apex:pageBlockSection>
+        
+        
+        <apex:pageBlockSection title="Course Information" id="pbs4" columns="2" collapsible="false">
+             <apex:inputField value="{!Student_Enquiry__c.Interested_Course_1__c}"/>
+             <apex:inputField value="{!Student_Enquiry__c.Other_Interested_Course__c}"/>
+             <apex:inputField value="{!Student_Enquiry__c.Interested_Course_2__c}"/>
+        </apex:pageBlockSection>
+        
+        </apex:pageBlock>
+         
+        </div>
+        <br/>
+        <div >
+            <table>
+             <tr>
+                 <td >
+            		 <apex:commandButton id="Button4" value="Save" action="{!SaveMeWithPageRef}" styleClass="button" 
+                                    style="background:purple;color:white;font-size:24px; border-radius: 15px;                                                                          width:120px;
+                                           height:40px;margin-left:900px;"
+                                   onmouseover="turnGreen('{!$Component.Button4}')"
+                                   onmouseout="turnPurple('{!$Component.Button4}')"/>
+                 </td>
+                 <td>
+            			<apex:commandButton id="Button5" value="Cancel" styleClass="button" 
+                                    style="background:purple;color:white;font-size:24px; border-radius: 15px;                                                                          width:120px;
+                                           height:40px;margin-left:5px;"
+                                   onmouseover="turnYellow('{!$Component.Button5}')"
+                                onmouseout="turnPurple('{!$Component.Button5}')" immediate="true"/> 
+                </td>
+             </tr>  
+       </table>
+        </div>  
+		<div style="top:0% left:50%; margin:10px 20px 20px 100px;">
+            <apex:commandButton id="Button6" value="Save and New" styleClass="button"  action="{!CancelWithPageref}"
+                                    style="background:purple;color:white;font-size:24px; border-radius: 15px;                                                                          width:120px;
+                                           height:40px;width:250px;margin-left:805px;"
+                                   onmouseover="turnGreen('{!$Component.Button6}')"
+                                   onmouseout="turnPurple('{!$Component.Button6}')"/> 
+         </div>  
+        
+             
+       
+    </apex:form>
+    
+
+</apex:page>

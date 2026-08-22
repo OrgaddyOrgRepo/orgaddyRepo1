@@ -1,0 +1,32 @@
+<template>
+    <lightning-card>
+       
+            <lightning-datatable
+                    data={data}
+                    columns={columns}
+                    key-field="id"
+                   onsave={handleSave}
+                   draft-values={draftValues}
+                   errors={errors}
+                   oncellchange={validateCellValue}
+                   >
+            </lightning-datatable> 
+        <!--    oncellchange={validateCellValue} -->
+        <template if:true={error}>
+               {dataerror}
+       </template>
+
+       <!-- <lightning-datatable
+       key-field="id"
+       data={data}
+       columns={columns}
+       errors={errors}
+       onsave={handleSave}
+   >
+   </lightning-datatable> -->
+   <lightning-input label="Enter name :" onchange={handleinput}></lightning-input>
+   <lightning-button label="Validate" variant="success" onclick={validateAction}></lightning-button>
+    </lightning-card>
+    
+
+</template>

@@ -1,0 +1,178 @@
+<apex:page controller="testDynamicTableController" sidebar="false" showHeader="true" lightningStylesheets="true" >
+   
+    <apex:includeScript value="/soap/ajax/53.0/connection.js"/>
+    <apex:includeScript value="/soap/ajax/53.0/apex.js"/>
+    <apex:includeLightning />    
+    <div id="lightning" />
+            
+    <script type="text/javascript">
+  
+     function createCase(){
+        	var defaultValues = { 
+                Priority:'High',
+                Description:'Default Description',
+                Origin:'Phone',
+                Subject:'Default Subject',
+                Type:'Shipping',
+                Reason:'Installation'
+               
+           }
+        var RecordTypeId = '{!defaultRecordTypeId}';
+        
+            
+             window.location='/lightning/o/Case/new?defaultFieldValues='
+             				
+                 		    +'Priority='+defaultValues.Priority
+                 			+','+'Description='+defaultValues.Description
+             				+','+'ContactId='+'{!contactRecId}'
+             				+','+'RecordTypeId='+'{!defaultRecordTypeId}'
+             				+','+'Type='+defaultValues.Type
+             				+','+'Reason='+defaultValues.Reason
+             				+','+'Origin='+defaultValues.Origin
+             				+','+'Subject='+defaultValues.Subject; 
+            
+         
+
+    } 
+                            
+</script>
+    
+    <apex:form >
+
+        <apex:pageBlock >
+           
+            <apex:outputPanel rendered="{!if(Cases.size > 0,true,false)}" >
+                <br/>
+                <apex:commandButton value="Filter" action="{!ShowFilter}" />
+                <apex:commandButton value="Clear Filter" action="{!ClearFilter}"/>
+                <br/>
+                <!-- Add Case--> 
+                <apex:commandButton value="Add Case(JS)"   onClick="createCase();return false;"/>
+                <apex:commandButton value="Add Case(PageRef)"   action="{!NewCase}"/>
+                
+                <!--Table with Dynamic columns added by Aditya -->
+                <apex:pageBlockTable id="cases_list" value="{!Cases}" var="rec" rendered="{!NOT(ssc = null)}">
+                    
+                    <apex:repeat value="{!selectedFields}" var="fieldLabel"> 
+                        
+                        <apex:column value="{!rec[fieldLabel]}"  rendered="{!fieldLabel !='CaseNumber'}"/> 
+                        <apex:column Headervalue="{!fieldLabel}"  rendered="{!fieldLabel ='CaseNumber'}">
+                            <a href="{!$Site.BaseUrl}/{!rec.Id}" target="_blank">{!rec[fieldLabel]}</a><br/>
+                        </apex:column> 
+                    </apex:repeat> 
+                </apex:pageBlockTable>
+                
+                
+                <apex:pageBlock >
+                    <apex:pageBlockButtons >
+                        <div style="text-align:right" > 
+                          
+                            Total Records Found: {!ssc.resultSize} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <apex:outputText rendered="{!if(ssc.resultSize > 10,true,false)}">
+                                 Page Number : {!PageNumber}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <apex:image url="/img/search_prevarrow_disabled.gif" styleClass="prevArrow" rendered="{!NOT(ssc.HasPrevious)}"/>  
+                            
+                            <apex:image url="/img/search_prevarrow.gif" title="Previous Page" styleClass="prevArrow" rendered="{!ssc.HasPrevious}"/> 
+                            &nbsp;&nbsp;&nbsp;
+                            <apex:commandLink action="{!Previous}" title="Previous Page" value="Previous Page" rendered="{!ssc.HasPrevious}"/>  
+                            <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(ssc.HasPrevious)}">Previous Page</apex:outputPanel>   
+                            &nbsp;&nbsp;&nbsp;
+                            <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(ssc.HasNext)}">Next Page</apex:outputPanel>           
+                            <apex:commandLink title="Next Page" value="Next Page" rendered="{!ssc.HasNext}" action="{!Next}"/>&nbsp; 
+                            &nbsp;&nbsp;&nbsp;
+                            <apex:image url="/img/search_nextarrow.gif" title="Next Page" styleClass="nextArrow" rendered="{!ssc.HasNext}"/>  
+                            <apex:image url="/img/search_nextarrow_disabled.gif" rendered="{!NOT(ssc.HasNext)}"/> 
+                            <img src="/s.gif" title="Last Page" alt="Last Page" class="last"/>
+                            </apex:outputText>
+                                    
+                        </div>
+                    </apex:pageBlockButtons>
+                    <br/>
+                    
+                    
+                    
+                    
+                    
+                </apex:pageBlock>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!if(caseList.size = 0,true,false)}" >
+                <apex:commandButton style="margin-top:20px;" value="Create Case" action="{!NewCase}"/>
+            </apex:outputPanel>
+        </apex:pageBlock>
+        
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                
+                
+                
+                
+                <apex:outputPanel id="tstpopup">
+                    <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayPopUp}"/>
+                    <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
+                        <apex:pageBlock title="Filter" tabStyle="Account" >
+                            <apex:pageBLockSection collapsible="true" title="Priority" >
+                                <apex:pageBlockSectionItem >
+                                    <apex:selectCheckboxes value="{!Priority_choices}" layout="pageDirection">  
+                                        <apex:selectOptions value="{!Priorities}"/><br/>  
+                                    </apex:selectCheckboxes> 
+                                </apex:pageBlockSectionItem>
+                            </apex:pageBLockSection>
+                            
+                            <apex:pageBlockSection collapsible="true" title="Status">
+                                <apex:pageBlockSectionItem >
+                                    <apex:selectCheckBoxes value="{!Status_choices}" layout="PageDirection">
+                                        <apex:selectOptions value="{!Status}"></apex:selectOptions>
+                                    </apex:selectCheckBoxes>
+                                </apex:pageBlockSectionItem>
+                            </apex:pageBlockSection>
+                        </apex:pageBlock>
+                        <apex:commandButton value="Cancel" action="{!closeFilter}" rerender="tstpopup"/>
+                        <apex:commandButton value="Apply" action="{!applyFilter}"  status="status"/>
+                        <apex:actionstatus id="status" startText="Appling Filter...">
+                        </apex:actionstatus>
+                    </apex:outputPanel>
+                    
+                    
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        
+        
+        
+        
+        
+        
+    </apex:form>
+    <style type="text/css">
+        .custPopup{
+        background-color: white;
+        border-width: 2px;
+        border-style: solid;
+        z-index: 9999;
+        margin-top:10px;
+        margin-left:50px;
+        padding:5px;
+        position: fixed;
+        
+        width: 200px;
+        left:10px;
+        top:20px;
+        }
+        .popupBackground{
+        background-color:black;
+        opacity: 0.20;
+        filter: alpha(opacity = 20);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 9998;
+        }
+        
+    </style>
+    
+    
+</apex:page>

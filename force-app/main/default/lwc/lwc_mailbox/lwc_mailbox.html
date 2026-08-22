@@ -1,0 +1,104 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <lightning-card>
+  <div class="slds-p-around_medium">
+      <div class="topBg slds-p-around_x-small">
+            <lightning-layout>
+                <lightning-layout-item size="5">
+                    <lightning-input type="search" onchange={searchRecipientsinTable}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" >
+                <div class="slds-p_around_small">
+                    <br/> 
+                        <p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Recipients : {totalSelectedRows}</span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span><lightning-helptext content="Some Content Here"></lightning-helptext></span>
+                        </p>
+                </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="4">
+                    <br/>
+                    <lightning-button label="Click to Add Recipients" variant="brand" 
+                    onclick={openPopUp}
+                    class="slds-float_right"
+                    icon-name="utility:add"
+                    icon-position="left"> </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+  </div> 
+
+  <div class="slds-p-around_small">
+    <!-- Here will be the Added Recipients data table-->  
+        <template if:true={addedRecipients}>
+            <lightning-datatable key-field={id}
+                                data={addedRecipients}
+                                columns={columns}
+                                
+            ></lightning-datatable>
+        </template> 
+        <template if:true={emptyRecipients} >
+                <div class="slds-align_absolute-center slds-p-around_xx-large">
+                    No recipient(s) added to the mail list
+                </div>
+        </template>
+  </div>
+
+
+
+     <template if:true={showPopUp}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate slds-float_left">Add Recipients</h2>
+                </header>
+                
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning-input type="search"  
+                                    onchange={searchInput}
+                                    class="slds-size_3-of-4" ></lightning-input>
+                                    <br/>
+                
+                    <div class="slds-p-around_medium">
+                        <lightning-datatable class="datable_1" key-field={id}
+                                          data={data}
+                                          columns={columns}
+                                          onrowselection={handleRowSelection}
+                                          row-number-offset="10"
+                                          
+                                        >
+                        </lightning-datatable>
+                    </div>
+               
+                </div>
+               
+                <!-- Modal/Popup Box LWC footer starts here   class="slds-button slds-button_brand" -->
+                <footer class="slds-modal__footer">
+                    <!-- <lightning-button-group> -->
+                           <b>Recipients : {totalSelectedRows}</b>
+                           <lightning-helptext content={helpTextContent}  class="slds-p-around_medium slds-icon-text-error" icon-name="utility:info_alt"></lightning-helptext>
+                        
+                        <template if:true={data}>
+                            <lightning-button label="Reset Selection" onclick={resetSelection} variant="neutral"></lightning-button>
+                        </template>
+
+                        <template if:true={totalSelectedRows}>
+                            <lightning-button label="Add to Recipients"  onclick={addSelectedRecords} variant="brand" ></lightning-button>
+                        </template>
+                            <lightning-button label="Cancel" onclick={closePopUp} variant="neutral" ></lightning-button>
+                    <!-- </lightning-button-group> -->
+                  
+                </footer>
+            </div>
+           
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template> 
+ 
+    
+    
+</div>
+</lightning-card>
+</template>

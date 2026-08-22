@@ -1,0 +1,25 @@
+<apex:page standardController="Opportunity" >
+    <style>
+    .MyClass{	text-align:center;
+        		background-color: pink;
+        		color:IndianRed;
+        		font-size: 25px;
+        		font-style: Courier New;}
+    </style>
+    <div style="text-color:IndianRed;">
+        
+    
+    <apex:pageBlock >
+        <apex:pageBlockSection title="Opportunity Information" >
+        		
+            <apex:outputField value="{!opportunity.name}" />
+            <apex:outputField value="{!opportunity.amount}"/>
+            <apex:outputField value="{!opportunity.closeDate}"/>
+        </apex:pageBlockSection>
+        <apex:pageblockSection >
+        <apex:outputText label="Enter The Number: " />
+        </apex:pageblockSection>
+       
+    </apex:pageBlock>
+</div>
+    </apex:page>

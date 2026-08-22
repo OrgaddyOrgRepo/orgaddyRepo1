@@ -1,0 +1,136 @@
+<apex:page standardController="Student_Enquiry__c" extensions="CL_0109_IndividiualEnquiryEditControl">
+	<script type="text/javascript">  
+     function turnGreen(id) {
+               
+                 var myPara = document.getElementById(id);
+                myPara.style.background = "green";
+                mypara.style.color="white";
+                
+            }
+    function turnPurple(id)
+    		{  
+                var property = document.getElementById(id);
+                property.style.background = "purple";
+                property.style.color="white";
+            }
+   function turnYellow(id) {
+               
+                 var myPara = document.getElementById(id);
+                myPara.style.background = "#d6d149";
+                mypara.style.color="white";
+                
+            }
+</script>
+    <style>
+    p{
+    font-size: 12px;
+    }
+    .title{ font-size:18px;
+    	font-style:sans-serif;
+    	}
+    .lineHeight
+    { line-height: 0.2;
+    }
+    .alignCenter
+    { align:center;
+    }
+      .Sideheading{ font-size:22px;
+    	font-style:sans-serif;
+        
+        color:black;
+    	}
+     
+    .rightAlign
+        {
+        align:right;}
+        .pbs
+        { background:purple;
+        color:white;
+        	}
+</style>
+<apex:form >
+          <div style="margin-left:0%;margin-right:0%;">
+             
+       			 <apex:image value="{!$Resource.ByJus_Banner}" height="200" width="100%"/>
+           </div>
+        <p>
+          
+         	<span>
+              <apex:image value="{!$Resource.Student_Icon}" height="40" width="40"/>
+            </span>
+     		<span class="Sideheading">
+                  {!DetailRecord.Candidate_Name__c}
+                <table>
+                  <tr> 
+                    <td>
+                        <apex:commandButton id="check1" value="Save" action="{!UpdateEdited}" styleClass="button" 
+                                            style="background:purple;color:white;font-size:24px; border-radius: 15px;                                                                          width:120px;
+                                           height:40px;width:100px; margin-left:750px;text-decoration: none;"
+                                           onmouseover="turnGreen('{!$Component.check1}')"
+                                           onmouseout="turnPurple('{!$Component.check1}')"/>
+                    </td>  
+                    <td>
+                        <apex:commandLink id="check2" value="Cancel" action="{!CancelWithPageRef}" immediate="true" styleClass="button" 
+                                            style="background:purple;color:white;font-size:24px; border-radius: 15px;text-decoration:none;                                                                          width:120px;
+                                                   height:40px;margin-left:5px;padding: 5px 10px 5px 10px;"
+                                           onmouseover="turnYellow('{!$Component.check2}')"
+                                          onmouseout="turnPurple('{!$Component.check2}')">
+                            <apex:param name="cancelvar" value="{!DetailRecord.Id}" assignTo="{!CancelRecId}"/>
+                        </apex:commandLink>
+                   </td>     
+                  </tr> 
+                </table>
+            </span>
+       </p>
+          
+            
+            		 
+               
+      
+       
+<apex:pageblock >
+   
+      <br/>
+ 
+    
+       <apex:pageblockSection title="Candidate Information" id="pbs1" columns="2" collapsible="false">
+             <apex:inputField value="{!DetailRecord.Candidate_Name__c}" />
+             <apex:inputField value="{!DetailRecord.Gender__c}"/>
+             <apex:inputField value="{!DetailRecord.Guardian__c}"/>
+             <apex:inputField value="{!DetailRecord.Date_Of_Birth__c}"/>
+             <apex:inputField value="{!DetailRecord.Guardian_Name__c}"/>
+             <apex:inputField value="{!DetailRecord.Father_Occupation__c}"/>
+             <apex:inputField value="{!DetailRecord.Community__c}"/>
+             <apex:inputField value="{!DetailRecord.Mother_Occupation__c}"/>
+           <!-- <apex:inputField value="{!DetailRecord.Course__c}"/> -->
+             <apex:inputField value="{!DetailRecord.Family_Annual_Income__c}"/>
+             <apex:inputField value="{!DetailRecord.Proofs_Submitted__c}"/>
+             <br/>
+             <apex:inputField value="{!DetailRecord.Passport_No__c}"/>
+        </apex:pageblockSection>
+        
+        <apex:pageBlockSection title="Educational Details" id="pbs2" columns="1" collapsible="false">
+              <apex:inputField value="{!DetailRecord.Educational_Qualification__c}"/>
+              <apex:inputField value="{!DetailRecord.Year_Of_Pass__c}"/>
+              <apex:inputField value="{!DetailRecord.Passed_Out_Organisation__c}"/>
+        </apex:pageBlockSection>
+             
+        <apex:pageBlockSection title="Contact Details" id="pbs3" columns="2" collapsible="false">
+             <apex:inputField value="{!DetailRecord.Mobile_No__c}"/>
+             <apex:inputField value="{!DetailRecord.Father_Mobile_No__c}"/>
+             <apex:inputField value="{!DetailRecord.Address_For_Correspondence__c}"/>
+             <apex:inputField value="{!DetailRecord.Email__c}"/>
+             <apex:inputField value="{!DetailRecord.Permanent_Address__c}"/>
+        </apex:pageBlockSection>
+        
+        
+        <apex:pageBlockSection title="Course Information" id="pbs4" columns="2" collapsible="false">
+             <apex:inputField value="{!DetailRecord.Interested_Course_1__c}"/>
+             <apex:inputField value="{!DetailRecord.Other_Interested_Course__c}"/>
+             <apex:inputField value="{!DetailRecord.Interested_Course_2__c}"/>
+        </apex:pageBlockSection>
+ 
+ 
+</apex:pageblock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,22 @@
+.THIS .CardStyle1
+{	margin-top:40px;
+    margin-left:100px;
+    background-color: GainsBoro;
+    border: 4px purple solid ;
+  	
+    padding : 5px 5px 5px 5px;
+}
+
+
+
+
+.THIS .CardStyle2
+{   
+    margin-top:40px;
+    margin-left:650px;
+    
+    background-color: GainsBoro;
+    border: 4px purple solid ;
+  	
+    padding : 5px 5px 5px 5px;
+}

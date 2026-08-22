@@ -1,0 +1,7 @@
+<apex:page standardController="Contact" >
+    <apex:pageblock >
+        <apex:pageblocksection title="Checking The Custom Label">
+            <apex:outputLabel value="{!$Label.MyContactLabel}"></apex:outputLabel>
+        </apex:pageblocksection>
+    </apex:pageblock>    
+</apex:page>

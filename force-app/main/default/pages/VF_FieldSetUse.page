@@ -1,0 +1,23 @@
+<apex:page standardController="Passenger__c" tabStyle="Contact">
+    <apex:form >
+    <apex:pageblock >
+        <apex:pageblocksection Title="Contact Details : ">
+        	<apex:repeat value="{!$ObjectType.Passenger__c.fieldsets.Passenger_Contact}" var="ContactHim">
+                <apex:inputfield value="{!Passenger__c[ContactHim]}"/>
+            </apex:repeat>
+           
+           
+        </apex:pageblocksection>
+        
+	<apex:pageblocksection title="Passenger Contact Address: ">
+        	
+            <apex:repeat value="{!$ObjectType.Passenger__c.fieldsets.MailingAddress}" var="MailingFields">
+                 <apex:Inputfield value="{!Passenger__c[MailingFields]}"/>
+             </apex:repeat>
+        </apex:pageblocksection>
+        
+       
+    </apex:pageblock>
+
+ </apex:form>
+</apex:page>

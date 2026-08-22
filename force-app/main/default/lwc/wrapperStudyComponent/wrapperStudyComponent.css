@@ -1,0 +1,18 @@
+.brodercolor
+{
+    border-color: blueviolet !important;
+    border-width: 2px !important;
+    border-radius: 3px !important;
+}
+
+
+
+.contactCard
+{
+    border-radius: 5px !important;
+    border-width: 1px !important;
+    border-style: double;
+    box-shadow: inset;
+    border-color: beige;
+    background-color: bisque;
+}

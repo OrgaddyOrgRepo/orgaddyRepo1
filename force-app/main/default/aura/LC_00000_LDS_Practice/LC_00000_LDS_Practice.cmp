@@ -1,0 +1,30 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	
+    	<lightning:RecordEditForm
+    objectApiName="Contact"
+    recordId="0035g00000HQIrWAAX"
+>  
+            
+            <div class="slds-grid slds-gutters">
+                 <div class="slds-col">
+            <lightning:inputField variant="label-stacked" label="Contact Name" class="slds-m-bottom_large" fieldName="Name"/>
+                 </div>
+                  <div class="slds-col">
+                      
+            <lightning:inputField variant="label-stacked" label="Email" class="slds-m-bottom_large" fieldName="Email"/>
+              </div>
+              <div class="slds-col">
+            <lightning:inputField variant="label-stacked"  class="slds-m-bottom_large" fieldName="Phone"/>
+              </div>
+           </div>
+               
+  <div class="slds-var-m-top_medium">
+        <lightning:Button variant="brand" type="submit" label="Save" >
+        </lightning:Button>
+    </div>
+
+
+
+</lightning:RecordEditForm>
+    
+</aura:component>

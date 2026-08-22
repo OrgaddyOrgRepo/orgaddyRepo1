@@ -1,0 +1,46 @@
+.custom-container{
+	color : black;
+}
+
+/* File: apiTester.css */
+:host {
+  display: block;
+  background-color: #1e1e1e;
+  color: #e1e1e1;
+  font-family: 'Courier New', monospace;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+input, textarea, select {
+  background-color: #2e2e2e;
+  color: #ffffff;
+  border: 1px solid #555;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #f26b38;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff824b;
+}
+
+h3 {
+  color: #ffd700;
+}
+
+lightning-card {
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+}

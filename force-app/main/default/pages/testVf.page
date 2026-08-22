@@ -1,0 +1,39 @@
+<apex:page controller="testDynamicTableController" sidebar="false" showHeader="true" lightningStylesheets="true" >
+<apex:form >
+    <apex:includeLightning />
+
+
+<!-- div tag act as locator while calling Lightning.createComponent -->
+
+<div id="lightning" />
+
+<script>
+
+$Lightning.use("c:SampleLightningApp", function() {
+
+$Lightning.createComponent
+("c:LC_testNavigationToCreateCasePage",
+
+"",
+
+"lightning",
+
+function(cmp) {
+
+// do some stuff
+
+});
+
+});
+    </script>
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+         <apex:commandButton value="Add Case"   onClick="createCase();return false;"/>
+        </apex:pageBlockSection>
+        <div id="lwcHere">
+            
+        </div>
+    </apex:pageBlock>
+
+</apex:form>
+</apex:page>

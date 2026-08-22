@@ -1,0 +1,53 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid blueBorder" >
+            <div class="slds-align_absolute-center">
+                <div class="slds-col slds-order_1">
+                    <span class="slds-var-m-around_small" >
+                        <lightning-button-icon class="my-icon" name ="previous" icon-name="utility:chevronleft" onclick = {handleMonthChange} alternative-text="Left" title="previous"></lightning-button-icon>
+                        
+                    </span>
+                    
+                </div>
+                <div class="slds-col slds-order_2">
+                    <span>
+                        <i> <b class="slds-align_absolute-center" style="height:5rem; font-style:bold;font-size:18px;">{displayedMonth_Year}</b></i>
+                    </span>
+                </div>
+                <div class="slds-col slds-order_2">
+                    <span class="slds-var-m-around_small">
+                        <lightning-button-icon class="my-icon" name="next" icon-name="utility:chevronright" onclick= {handleMonthChange} alternative-text="Next" title="next" ></lightning-button-icon>
+
+                    </span>
+                </div>
+                <!-- <div class="slds-col slds-order_2">
+                    <span>
+                       <i> <b class="slds-align_absolute-center" style="height:5rem; font-style:bold;font-size:18px;">{displayedMonth_Year}</b></i>
+                            <div class="slds-grid slds-wrap slds-border_left slds-border_top slds-border_right slds-border_bottom blueBorder">
+                                
+
+                                <template for:each={dayList} for:item="day" for:index="index">
+                                    <div class="slds-size_1-of-7" key={day}>
+                                        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small slds-border_left slds-border_top slds-border_right slds-border_bottom dayBorder">{day}</div>
+                                    </div>
+                                </template>
+                                <template for:each={dateList} for:item="date" for:index="idx">
+                                    <div class="slds-size_1-of-7" key={date}>
+                                        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small slds-border_left slds-border_top slds-border_right slds-border_bottom dateBorder">{date}</div>
+                                    </div>
+                                </template>
+                                
+                            </div> 
+                        
+                    </span>
+                </div>-->
+                <!-- <div class="slds-col slds-order_3">
+                    <span class="slds-var-m-around_small" onclick= {handleMonthChange} name="next">
+                        <lightning-button-icon class="my-icon" name="next" icon-name="utility:chevronright" onchange= {handleMonthChange} alternative-text="Next" title="next" ></lightning-button-icon>
+                        
+                    </span>
+                </div> -->
+            </div>
+        </div>
+    </lightning-card>
+</template>

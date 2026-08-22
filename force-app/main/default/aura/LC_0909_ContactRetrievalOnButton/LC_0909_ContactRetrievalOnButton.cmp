@@ -1,0 +1,20 @@
+<aura:component controller="CL_0909_ContactRetrievalFromOrg">
+    <aura:attribute name="flag" type="boolean" default="false"/>
+    <aura:registerEvent name="ButonClick" type="c:LE_0909_ReceiveContacts"/>
+    <lightning:card>
+        
+        <aura:set attribute="actions">
+            <lightning:button variant="base" label="Show Contacts" onclick="{!c.ShowTable}"/>
+        </aura:set>
+    </lightning:card>
+      
+       
+           <aura:if isTrue="{!v.flag}">
+               <lightning:card>
+        		<c:LC_0909_ShowTableOfReceivedContacts/>
+               </lightning:card>
+           </aura:if>
+       
+
+  
+</aura:component>

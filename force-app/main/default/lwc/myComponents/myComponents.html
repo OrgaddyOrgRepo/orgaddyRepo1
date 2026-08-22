@@ -1,0 +1,48 @@
+<template>
+<lightning-card  title="Custom Datatable WIth Cart Functionality" >
+    <div >
+        <lightning-button label="Show Table" name="CustomTableWithCartFunctionality" onclick={handleButtonClick}></lightning-button>
+        <div class="CustomTableWithCartFunctionality" style="display:none;">
+            <div>
+                <c-custom-datatable-comp></c-custom-datatable-comp>
+            </div>
+            
+        </div>
+    </div>
+        
+          <!-- <c-custom-datatable-comp></c-custom-datatable-comp> -->
+</lightning-card>   
+<lightning-card  variant="Narrow"  title="Test comp" >
+    <lightning-button label="Test comp" name="testcomp" onclick={handleButtonClick}></lightning-button>
+        <div class="testcomp">
+            <div style="display:none;">
+                <!-- <c-custom-datatable-comp></c-custom-datatable-comp> -->
+            </div>
+            
+        </div>
+        
+</lightning-card>
+<lightning-card  variant="Narrow"  title="Hello" icon-name="standard:account">
+    <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+    <lightning-button label = "Show" name="templateToggle" onclick={handleShowComp}></lightning-button>
+    <p class="slds-p-horizontal_small">Show And Hide using template if true</p>
+    <template if:true={showComp}>
+         <c-custom-datatable-comp></c-custom-datatable-comp>
+    </template>
+    <p slot="footer">Card Footer</p>
+</lightning-card>
+<lightning-card title="PDF datatable on popup">
+    <lightning-button label="Show PDF" name="PDFPopup" onclick={handleButtonClick}></lightning-button>
+    <div class="PDFPopup" style="display:none;">
+        <c-contact-table-with-modal></c-contact-table-with-modal>
+    </div>
+</lightning-card>
+
+<lightning-card title="Input Components with validty Report">
+    <lightning-button label = "Show inputs" name="inputWithReportValidity" onclick={handleButtonClick}></lightning-button>
+    <div class="inputWithReportValidity" style="display:none;">
+        <c-input-tag-practice></c-input-tag-practice>
+        
+    </div>
+</lightning-card>
+</template>

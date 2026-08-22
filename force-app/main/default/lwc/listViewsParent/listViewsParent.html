@@ -1,0 +1,19 @@
+<template>
+        <lightning-combobox
+            name="progress"
+            label="Status"
+            value={selectedList}
+            placeholder="Select a ListView"
+            options={options}
+            onchange={handleChange} ></lightning-combobox>
+
+            <template if:true={data}>
+               <lightning-card>
+                  
+                    <c-list-views columns={COLUMNS}  table-data ={data}  onsavedraft={handleRefreshCaseData} ></c-list-views> 
+        <!-- filtervar ={filterVars} -->
+                </lightning-card>
+             </template>
+        
+    
+</template>

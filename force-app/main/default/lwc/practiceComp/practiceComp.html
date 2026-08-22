@@ -1,0 +1,31 @@
+<template>
+    <lightning-card>
+        <div class="slds-var-p-around_medium">
+            <lightning-button variant="brand-outline" label="Show Dynamic Row Component" class="slds-p-around_medium" name="dynamicRowsComp1" onclick={handleToggleComponents}></lightning-button>
+            <div class="dynamicRowsComp1" style="display:none;">
+                <div>
+                    <c-dynamic-rows-component></c-dynamic-rows-component>
+                </div>
+                
+            </div>
+        </div>
+        <div class="slds-var-p-around_medium">
+            <lightning-button variant="brand-outline" label="Show Custom Calendar" name="CalendarComp2" onclick={handleToggleComponents} class="slds-p-around_medium"></lightning-button>
+            <div class="CalendarComp2" style="display:none;">
+                <div>
+                    <c-custom-calendar></c-custom-calendar>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-var-p-around_medium">
+            <lightning-button variant="brand-outline" label="My Custom Calendar" name="MyCalendarComp2" onclick={handleToggleComponents} class="slds-p-around_medium"></lightning-button>
+            <div class="MyCalendarComp2" style="display:none;">
+                <div>
+                    <c-custom-calendar-comp></c-custom-calendar-comp>
+                </div>
+            </div>
+        </div>
+
+    </lightning-card>
+</template>

@@ -1,0 +1,13 @@
+<apex:page standardController="Student_Enquiry__c">
+    <style>
+        	.bpageblock{
+        				background:green;
+        				border-top: 4px solid red ;
+        				}
+    </style>
+    <apex:sectionHeader title="The SectionHeader" subtitle="Subtitle"/>
+    <div style="margin-left:5%;margin-right:5%;">
+    	<apex:PageBlock title="Pageblock title">
+    	</apex:PageBlock>
+    </div>    
+</apex:page>

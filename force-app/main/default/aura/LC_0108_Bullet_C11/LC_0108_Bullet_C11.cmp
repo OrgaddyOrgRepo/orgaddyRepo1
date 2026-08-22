@@ -1,0 +1,5 @@
+<aura:component >
+    <c:LC_0108_Bullet_C12/>
+    
+    <aura:handler name="Bullet_C13" event="c:LE_0108_Bullet_Event" action="{!c.PingMe_C11}"/>
+</aura:component>

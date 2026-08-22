@@ -1,0 +1,36 @@
+<aura:component>
+ 	<tr>
+        <td>
+           
+                <lightning:card title="Card 1" class="CardStyle1">
+                    <div style="padding: 5px 5px 5px 5px;">
+                    <aura:set attribute="actions">
+                        <lightning:button variant="success" label="Submit"/>
+                        
+                    </aura:set>
+                    <lightning:input label="Name" />
+                    <lightning:input label="phone" type="Phone"/>
+                    <lightning:input label="Password" type="Password"/>
+                    </div>
+                </lightning:card>
+            
+        </td>
+
+        <td >
+                
+                <lightning:card title="Card 2" class="CardStyle2">
+                    <div style="padding: 5px 5px 5px 5px;">
+                    <aura:set attribute="actions">
+                        <lightning:button variant="success" label="Submit"/>
+                        
+                    </aura:set>
+                    <lightning:input label="Name" />
+                    <lightning:input label="phone" type="Phone"/>
+                    <lightning:input label="Password" type="Password"/>
+                    </div>
+                </lightning:card>
+            
+              
+       </td>
+  </tr>
+</aura:component>

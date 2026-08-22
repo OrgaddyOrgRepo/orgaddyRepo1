@@ -1,0 +1,27 @@
+.inputCss{
+color: indianred;
+/* background-color: var(--lwc-color-background-alt-inverse); */
+font-size: 25px;
+font-style: italic;
+}
+
+.textInput{
+    -webkit-text-fill-color: rgb(0, 0, 0);
+}
+.slds-input{
+    background-color: yellowgreen;
+    color:chocolate;
+}
+.label {
+    verflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    display: inline-block;
+    color: rgb(68, 68, 68);
+    font-size: 0.75rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    margin-bottom: 0.125rem;
+}

@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <lightning-datatable key-field="Id"
+        data = {data}
+        columns = {columns}
+        oncellchange= {handleCellChange}
+        errors = {errors}
+        show-row-number-column="true"
+        onsave = {handleSave}
+        draft-values= {draftValues}
+     >
+    </lightning-datatable>
+   
+    </lightning-card>
+</template>

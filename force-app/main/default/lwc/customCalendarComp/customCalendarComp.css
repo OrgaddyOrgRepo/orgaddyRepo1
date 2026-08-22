@@ -1,0 +1,33 @@
+.dummy{
+	color : black;
+}
+.dayBorder{
+	border-color: blue;
+	border-radius: 3px;
+}
+.dateBorder{
+	border-color: pink;
+	border-radius: 3px;
+}
+.redBorderAround
+{
+	border-color:tomato;
+	
+	border-radius: 5px;
+}
+.calendarBg
+{
+	background-color: lightgoldenrodyellow;
+}
+.my-icon {
+    --slds-c-icon-color-foreground-default: beige;
+    --slds-c-icon-color-background: green;
+    --slds-c-icon-height : 100px;
+
+}
+.blueBorder
+{
+	
+	border-color : blue;
+	border-radius: 3px;
+}

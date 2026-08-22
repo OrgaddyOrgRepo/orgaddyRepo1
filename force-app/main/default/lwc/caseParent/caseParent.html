@@ -1,0 +1,95 @@
+<template>
+    <lightning-card title="List View In New Version">
+       <div class="clsCardBody">
+          <!--################ list of Sbojects  #############-->          
+          <div>
+             <lightning-combobox
+                name="sObjects"
+                label="Select Object For Listview"
+                value={objectApiName}
+                options={sObjectOptions}
+                onchange={handleChange} ></lightning-combobox>
+          </div>
+          <!--#############################-->          
+          <div>&nbsp; &nbsp; &nbsp;&nbsp;</div>
+          <!--################ Listview Start Here  #############-->          
+          <article>
+             <div class="slds-p-around_medium lgc-bg list_view_and_table_container"  id="myDIV">
+                <lightning-tile label={objectName}  type="media" href="javascript:void(0);" class="list_view_container" >
+                   <lightning-icon slot="media" icon-name={objectIcon} size="medium" class="icon_custom_class">
+                   </lightning-icon>
+                   <div class="slds-form-element">
+                      <div class="slds-form-element__control">
+                         <div class="slds-combobox_container testCustomCss">
+                            <div class={dropdownTriggerClass} aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                               <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right"
+                                  role="none" onclick={handleClickExtend}>
+                                  <span class="current_filter">
+                                     {listViewName}
+                                     <lightning-icon
+                                        class="slds-m-left_x-small slds-button__icon slds-icon-utility-down slds-icon_container forceIcon"
+                                        data-data-rendering-service-uid="232" data-aura-rendered-by="371:0"
+                                        data-aura-class="forceIcon" icon-name="utility:down" size="x-small">
+                                     </lightning-icon>
+                                  </span>
+                               </div>
+                               <div  class="listViewPickerPanel deActive_ListView uiPanel--default uiPanel positioned south" 
+                                  aria-hidden="true" tabindex='0'  onfocusout={handelFocusOut} style="outline:none;">
+                                  <div id="listbox-id-1" class="slds-form-element slds-lookup forceVirtualAutocompleteMenu max_height"
+                                     role="listbox" >
+                                     <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                        <li role="presentation" class="slds-dropdown__header slds-text-heading--label forceVirtualAutocompleteMenuOption">
+                                           <div>List Views</div>
+                                        </li>
+                                        <template for:each={listViewOptions} for:item="option">
+                                           <li role="presentation" class="slds-listbox__item" key={option.value}>
+                                              <div class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+                                                 data-filter={option.value} onclick={getListViewValue}  
+                                                 >
+                                                 <span class="slds-media__figure slds-listbox__option-icon"
+                                                    data-filter={option.value}>
+                                                    <template if:true={option.show_option_icon}>
+                                                       <lightning-icon icon-name="utility:check" size="xx-small" class="my-icon">
+                                                       </lightning-icon>
+                                                    </template>
+                                                 </span>
+                                                 <span class="slds-media__body" data-filter={option.value}>
+                                                 <span class="slds-truncate" 
+                                                    data-filter={option.value}>{option.label}</span>
+                                                 </span>
+                                              </div>
+                                           </li>
+                                        </template>
+                                     </ul>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </lightning-tile>
+             </div>
+             <div class="table_cc">
+                <!--################ Lightning Spinner start here #############-->          
+                <!-- <template if:true={isLoading}>
+                   <lightning-spinner alternative-text="spinner"></lightning-spinner>
+                </template> -->
+                <!--################ Lightning Spinner end here #############-->          
+                <!--################ list view dataTable start here #############-->
+                <lightning-datatable
+                   key-field="id"
+                   columns={lstviewCol}
+                   data={storeListViewRecords}
+                   show-row-number-column
+                   >
+                </lightning-datatable>
+                <!--################ list view dataTable end here ############-->
+                <template if:false={hasRecords}>
+                   <div class="No_Record_Found_Css">No items to display</div>
+                </template>
+             </div>
+          </article>
+          <!--################ Listview End Here  #############-->          
+       </div>
+    </lightning-card>
+ </template>

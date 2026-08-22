@@ -1,0 +1,28 @@
+<apex:page controller="AccordionController">    
+    <apex:form >
+    <apex:pageBlock title="Accounts and related Contacts" tabStyle="Contact" id="pb">
+        <apex:repeat value="{!listAccounts}" var="acc">
+            <apex:pageBlockSection collapsible="true" title="{!acc.Name}">
+                <apex:pageBlockSectionItem >
+                    <apex:repeat value="{!acc.Contacts}" var="con">
+                        {!con.FirstName} {!con.LastName}<br/>
+                        <apex:outputPanel >
+                             <apex:selectCheckboxes value="{!choices}" layout="pageDirection">  
+                               <apex:selectOptions value="{!Priority}"/><br/>  
+                             </apex:selectCheckboxes> 
+                           <apex:dataList value="{!choices}" var="c">{!c}</apex:dataList>
+                        </apex:outputPanel>
+                    </apex:repeat>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:repeat>
+        <!-- Collapsing all the Page Block Sections by default -->
+        <script>
+            console.log( 'Account List Size ' + {!listAccounts.size} );
+            for ( let i = 0; i < {!listAccounts.size}; i++ ) {
+                twistSection(document.getElementById('{!$Component.pb}').getElementsByTagName('img')[i]);
+            }
+        </script>
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

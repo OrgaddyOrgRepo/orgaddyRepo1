@@ -1,0 +1,12 @@
+<apex:page standardController="Student_Enquiry__c">
+<apex:form >
+    <apex:pageblock >
+    <P>
+        This is what I wanted to do....!!!!HUrrayy>>>>!!!!
+      </P>
+    <apex:outputField value="{!Student_Enquiry__c.Candidate_Name__c}"/>
+    <apex:outputField value="{!Student_Enquiry__c.Mobile_No__c}"/>
+    <apex:outputField value="{!Student_Enquiry__c.Email__c}"/>
+  </apex:pageblock>
+</apex:form>   
+</apex:page>

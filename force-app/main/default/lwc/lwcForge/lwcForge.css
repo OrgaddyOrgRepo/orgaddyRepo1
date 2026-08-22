@@ -1,0 +1,5 @@
+.code textarea {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    min-height: 140px;
+    white-space: pre;
+}

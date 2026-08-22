@@ -1,0 +1,14 @@
+<aura:component >
+    
+    <aura:registerEvent name="Bullet_C13" type="c:LE_0108_Bullet_Event"/>
+    <aura:handler name="Bullet_C13" type="c:LE_0108_Bullet_Event" action="{!c.PingMe}"/>
+    <lightning:card title="Bullet_C13" >
+    	<p>This Component Will fire the First Bullet---> C13</p>
+       <!-- <p>Not Receiving Any Event</p>-->
+        
+        <aura:set attribute="actions">
+            <lightning:button label="Fire C13" onclick="{!c.Fire_C13}"/>
+        </aura:set>
+    </lightning:card>
+	
+</aura:component>

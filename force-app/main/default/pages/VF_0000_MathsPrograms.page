@@ -1,0 +1,55 @@
+<apex:page controller="CL_0000_MathPrograms" sidebar="false" showHeader="false">
+<head>
+      <style>
+    	.Heading
+          {
+        	text-align:center;
+        	color: Purple;
+        	font-size:35px;
+           }
+          
+          body
+          { 
+           		background-color: gainsBoro;
+          		Border: 3px solid IndianRed;
+          		margin-left:5%;
+          		margin-right:5%;
+          		padding: 10px 10px 10px 10px;
+          }
+    </style> 
+</head> 
+    
+<body>
+    <apex:form >
+      <apex:pageBlock >
+        <p class="Heading">
+           <em> Reverse The Input Array</em>
+        </p>
+            <apex:pageblockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter The Array :"/>
+                    <apex:inputText value="{!Num}" accesskey="enter" /> 
+                </apex:pageBlockSectionItem>
+                <apex:commandButton value="Insert" action="{!enter}"/>
+                <br/>
+                    <p style="color:red; font-size:20px;">
+                    Note: Enter Each item one by one and press insert for each item...!!</p>
+                    <br/>
+                <apex:CommandButton value="Reverse It" action="{!ReverseTheInputArray}"/>
+                <apex:CommandButton value="Clear All" action="{!ClearAll}"/>
+                <br/>
+                    <p style="font-size:24px; color:brown;">
+                      The Input Array is :  {!EnteredArray} 
+                    </p>   
+                <br/>
+
+                <p style="font-size:28px; color:NavyBlue;">
+                         The Reversed Array is :{!ArrayOut}
+                </p>
+                
+          </apex:pageblockSection>
+        
+        </apex:pageBlock>
+      </apex:form>
+</body>   
+</apex:page>

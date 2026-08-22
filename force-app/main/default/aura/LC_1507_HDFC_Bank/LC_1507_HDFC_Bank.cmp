@@ -1,0 +1,79 @@
+<aura:component >
+    
+     <!--Variable Declarations-->
+    <aura:attribute name="Amount" type="Decimal" />
+    <aura:attribute name="DepositTerm" type="Integer" />
+    <aura:attribute name="Rate" type="Decimal" />
+    <aura:attribute name="Maturity" type="Decimal" />
+    <aura:attribute name="IntAccu" type="Decimal" />
+    
+	<lightning:card iconName="custom:custom11" >
+        <aura:set attribute="title">
+        	<b>HDFC Bank</b>
+            <br/>
+            <i>FD Calculator</i>
+        </aura:set>
+        <br/>
+        <lightning:input label="Amount For FD : " value="{!v.Amount}"/>
+        <br/>
+        <lightning:input label="Deposit Term : " value="{!v.DepositTerm}"/>
+        <br/>
+        <lightning:input label="Rate of Interest : " value="{!v.Rate}"/>
+        <br/> 
+        <br/>
+        
+        <aura:set attribute="actions">
+            <lightning:buttonGroup>
+            	<lightning:button variant="Success" label="Calculate" onclick="{!c.calc}"/>
+            	<lightning:button variant="Destructive" label="Clear" onclick="{!c.clear}"/>
+            </lightning:buttonGroup>
+        </aura:set>
+        <b>Interest Accumulated : {!v.IntAccu} </b>
+        <br/>
+        <b>Maturity Amount     : {!v.Maturity}</b> 
+    </lightning:card>
+    <br/>
+    
+    *************************************************************************************************************
+   	*************************************************************************************************************
+    <!--Declaring Variables for EMI section-->
+    
+    <aura:attribute name="LoanAmount" type="Decimal"/>  
+    <aura:attribute name="Tenure" type="Integer"/> 
+    <aura:attribute name="RoI" type="Decimal"/>
+    <aura:attribute name="EMI" type="Integer"/>
+    <aura:attribute name="InterestPaid" type="Decimal"/>
+    
+   
+	<lightning:card iconName="custom:custom4">
+        <aura:set attribute="title">
+        <b>HDFC Bank</b>
+        <br/>
+        <i>Home Loan EMI Calculator</i>
+        </aura:set> 
+        <br/>
+        
+        <lightning:input label="Loan Amount" value="{!v.LoanAmount}"/>
+        <br/>
+        <lightning:input label="Tenure (Years)" value="{!v.Tenure}"/>
+        <br/>
+        <b>Rate of Interest: {!v.RoI}  </b>   
+        <br/>
+        <b>EMI   &nbsp;&nbsp;&nbsp;&nbsp;  : {!v.EMI}</b>
+        <br/>
+        <b>Interest Paid : {!v.InterestPaid}</b>
+        
+        <aura:set attribute="actions">
+        	<lightning:buttonGroup>
+                <lightning:button variant="Success" label="Calculate" onclick="{!c.CalculateEmi}"/>
+                <lightning:button variant="Destructive" label="Clear" onclick="{!c.ClearMe}"/>
+            </lightning:buttonGroup>
+        
+        </aura:set>
+        <br/>
+        <br/>
+        <br/>
+    </lightning:card>
+
+    
+</aura:component>

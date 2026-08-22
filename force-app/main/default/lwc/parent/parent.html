@@ -1,0 +1,19 @@
+<template>
+    
+<lightning-combobox 
+name="progress"
+label="Status"
+value={selectedList}
+placeholder="Select a ListView"
+options={allListViews}
+onchange={handleChange} >
+</lightning-combobox>
+
+
+
+   <lightning-datatable key-field="Id"
+   columns={COLUMNS}
+   data={data}></lightning-datatable>
+
+{error}
+</template>

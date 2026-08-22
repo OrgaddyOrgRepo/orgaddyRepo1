@@ -1,0 +1,39 @@
+<apex:page controller="CL_2207_CreateAcc_With_Constructor">
+    <style>
+    	body
+        {
+		 background-image: url("Cool.png");       
+        }
+        
+    	.MyCss{ background: rgba(0, 128, 0, 0.3) ;	<!-- Green background with 30% opacity -->
+        		color: #003366;
+        }
+    </style>
+	<apex:form >
+  <div Styleclass="MyCss">
+      
+     <apex:pageblock >
+     <apex:pageBlockSection title="Account Insertion" columns="1" >
+		            
+            <br/>
+
+        	<apex:inputText label="Account Name" value="{!A.Name}"/>    
+            <apex:inputText label="Phone" value="{!A.Phone}"/>
+            <apex:inputText label="Fax" value="{!A.Fax}"/>
+            <apex:inputText label="Industry" value="{!A.Industry}"/>
+            
+            <apex:inputText label="Description" value="{!A.Description}"/>            
+        </apex:pageBlockSection>
+    
+    <apex:CommandButton value="Insert Using Constructor" action="{!InsertingAccount}" accessKey="Enter"/>
+    <br/>    
+    <apex:commandBUtton value="Clear Values"    action="{!ClearValues}"/>
+        <br/>
+        <br/>
+        <br/>
+        {!Result}
+   </apex:pageblock>
+   </div> 
+</apex:form>  
+    
+</apex:page>

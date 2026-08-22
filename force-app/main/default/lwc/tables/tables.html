@@ -1,0 +1,35 @@
+<template>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered" id="customTable">
+        <thead>
+            <tr class="slds-line-height_reset">
+            <th scope="col">
+                <div title="First Name" > FirstName</div>
+            </th>
+            <th scope="col">
+                <div title="Last Name"> LastName</div>
+            </th>
+            <th scope="col">
+                <div title="City"> City</div>
+            </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <template if:true={data}>
+                <template for:each={data} for:item="record">
+                   <tr key={record.id}>
+                    <th scope="col">
+                        <div>{record.FirstName}</div>
+                    </th>
+                    <th scope="col">
+                        <div>{record.LastName}</div>
+                    </th>
+                    <th scope="col">
+                        <div>{record.mailingCity}</div>
+                    </th>
+                </tr>
+                </template>
+            </template>
+        </tbody>
+    </table>
+</template>

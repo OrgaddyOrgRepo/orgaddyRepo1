@@ -1,0 +1,4 @@
+<apex:page controller="CL_0109_Practice_2_PageReference">
+
+<apex:outputlink value="/apex/VF_0109_Practice_2"> Click Here <apex:param name="msg" value="success"/> </apex:outputlink>
+</apex:page>

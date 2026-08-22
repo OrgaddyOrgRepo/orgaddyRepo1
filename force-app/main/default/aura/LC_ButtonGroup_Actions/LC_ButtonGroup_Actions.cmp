@@ -1,0 +1,28 @@
+<aura:component >
+  <lightning:card iconName="custom:custom11" >
+      <lightning:button label="Say HEllo" onclick="{!c.Hello}" variant="destructive"/>
+       	
+        <aura:set attribute="title">
+          
+        	<b>HDFC Bank</b>
+            <br/>
+            <i>FD Calculator</i>
+
+        </aura:set>
+        
+        <aura:set attribute="actions">         
+             <c:LC_ButtonGroup_Actions/>
+        </aura:set>
+    </lightning:card>
+    <br/>
+    
+    
+	<lightning:card iconName="custom:custom4" >
+        <aura:set attribute="title">
+        <b>HDFC Bank</b>
+        <br/>
+        <i>Home Loan EMI Calculator</i>
+        </aura:set>  
+    </lightning:card>
+    
+</aura:component>

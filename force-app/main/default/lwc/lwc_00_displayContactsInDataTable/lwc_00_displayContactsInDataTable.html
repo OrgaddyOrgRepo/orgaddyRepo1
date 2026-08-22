@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Search Account Here" icon-name="standard-account">
+    
+    <lightning-input label="Enter Account" onchange={searchmee}></lightning-input>
+        <lightning-datatable key-field="id"
+            columns={col}
+        data={AccountsList.data}
+        row-number-offset="3">
+    </lightning-datatable>   
+    </lightning-card>
+</template>

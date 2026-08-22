@@ -1,0 +1,84 @@
+<template>
+    
+<template if:false={showSampleCreationPage}>
+    <lightning-card>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="5" padding="around-small" small-device-size="3" medium-device-size="6"  > <!-- large-device-size="3"  -->
+                <div class="custom-box slds-around-p_small slds-around-p_small">
+                    <form>
+                        <lightning-combobox
+                            name="Quality__c"
+                            label="Quality"
+                            value={sampleRec.Quality__c}
+                            placeholder="Select Quality"
+                            options={qualityOptions}
+                            onchange={handleQualityComboboxChange} ></lightning-combobox>
+                    </form>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="5" padding="around-small" small-device-size="3" medium-device-size="6" >
+                 <div class="custom-box slds-around-p_small slds-around-p_small">
+                    <form>
+                        <lightning-combobox
+                            name="Design__c"
+                            label="Design"
+                            value={sampleRec.Design__c}
+                            placeholder="Select Design"
+                            options={designOptions}
+                            onchange={handleComboboxChange} ></lightning-combobox>
+                    </form>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="5" padding="around-small" small-device-size="3" medium-device-size="6" >
+                <div class="custom-box slds-around-p_small slds-around-p_small">
+                    <form>
+                        <lightning-combobox
+                            name="Shade__c"
+                            label="Shade"
+                            value={sampleRec.Shade__c}
+                            placeholder="Select Shade"
+                            options={shadeOptions}
+                            onchange={handleComboboxChange} ></lightning-combobox>
+                    </form>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="5" padding="around-small" small-device-size="3" medium-device-size="6" >
+                <div class="custom-box slds-around-p_small">
+                    <form><lightning-input label="Rate"  name="Rate__c" value={sampleRec.Rate__c} onchange={handleInputChange}></lightning-input></form>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="5" padding="around-small" small-device-size="3" medium-device-size="6" >
+                <div class="custom-box slds-around-p_small">
+                    <form><lightning-input label="Quantity" name="Quantity__c" type="number" value={sampleRec.Quantity__c} onchange={handleInputChange}></lightning-input></form>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="5" padding="around-small" small-device-size="3" medium-device-size="6" >
+                <div class="custom-box slds-around-p_small">
+                    <form><lightning-input label="GSM"  name="GSM__c" value={sampleRec.GSM__c} onchange={handleInputChange}></lightning-input></form>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="10" padding="around-small" small-device-size="3" medium-device-size="6" >
+                 <div class="custom-box slds-around-p_small">
+                    <lightning-layout>
+                        <!-- <lightning-layout-item size="6" padding="around-small">
+                            <lightning-button label="Save Sample" variant="success" onclick={handleSampleDataSave}></lightning-button>
+                        </lightning-layout-item> -->
+                        <lightning-layout-item size="6" padding="around-small">
+                            <lightning-button label="Reset" variant="brand-outline" onclick={handleReset}></lightning-button>
+                        </lightning-layout-item>
+                         <lightning-layout-item size="6" padding="around-small">
+                             <lightning-button label="Cancel" variant="brand" onclick={handleSampleDataCancel}></lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+        
+    </lightning-card>
+</template>
+        
+<template if:true={showSampleCreationPage}>
+    <c-sample-data-creation onsamplesaved={handleNewSampleSaved}></c-sample-data-creation>
+</template>  
+
+</template>

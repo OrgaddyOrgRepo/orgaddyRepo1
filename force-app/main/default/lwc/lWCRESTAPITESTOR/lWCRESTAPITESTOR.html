@@ -1,0 +1,31 @@
+<template>
+  <div class="postman-container">
+    <h1>🧪 API Tester (Postman Clone)</h1>
+
+    <label for="method">HTTP Method</label>
+    <select id="method" value={method} onchange={handleMethodChange}>
+      <option value="GET">GET</option>
+      <option value="POST">POST</option>
+      <option value="PUT">PUT</option>
+      <option value="DELETE">DELETE</option>
+    </select>
+
+    <label for="url">Endpoint URL</label>
+    <input id="url" type="text" value={url} onchange={handleUrlChange} />
+
+    <label for="headers">Headers (JSON format)</label>
+    <textarea id="headers" rows="4" value={headers} onchange={handleHeadersChange}></textarea>
+
+    <label for="body">Request Body (JSON format)</label>
+    <textarea id="body" rows="6" value={body} onchange={handleBodyChange}></textarea>
+
+    <button onclick={sendRequest}>🚀 Send Request</button>
+
+    <template if:true={response}>
+        <b>{responseBody}</b>
+
+      <h3>📥 Response:</h3>
+      <pre>{responseBody}</pre>
+    </template>
+  </div>
+</template>

@@ -1,0 +1,6 @@
+<apex:page >
+    <apex:form >
+        &nbsp;&nbsp;<apex:inputText label="Enter Your Age:"/>
+	</apex:form>
+
+</apex:page>

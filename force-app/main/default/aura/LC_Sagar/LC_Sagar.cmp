@@ -1,0 +1,47 @@
+<aura:component >
+
+    
+    <aura:attribute name="AmountforFD" type="Decimal"/>
+    <aura:attribute name="DepositeTerm" type="Decimal"/>
+    <aura:attribute name="roint" type="Decimal"/>
+    <aura:attribute name="result" type="Decimal"/>
+    <aura:attribute name="amt"  type="Decimal"/>
+    <aura:attribute name="roi"  type="Decimal"/>   
+    <aura:attribute name="tenure"  type="Decimal"/>
+    <aura:attribute name="res"  type="Decimal"/>
+    <lightning:card iconName="custom:custom11">
+        <aura:set attribute="title">
+            <b>HDFC BANK</b><br/>
+            FD Calculator
+        </aura:set>
+        <aura:set attribute="actions">
+            <lightning:buttonGroup>
+                <lightning:button label="Calculate" onclick="{!c.cal}"/>
+                <lightning:button label="Clear" onclick="{!c.clear}"/>
+            </lightning:buttonGroup>
+        </aura:set>
+        <lightning:input label="Enter Amount for FD" value="{!v.AmountforFD}"/>
+        <lightning:input label="Enter Deposite term" value="{!v.DepositeTerm}"/>
+        <lightning:input label="Rate of Interest" value="{!v.roint}"/><p></p>
+        
+        <b>Interest accumulated maturity amount:{!v.result}</b>
+    </lightning:card>
+    <lightning:card iconName="custom:custom11">
+        <aura:set attribute="title">
+            <b>HDFC BANK</b><br/>
+            Home Loan EMI Calculator
+        </aura:set>
+        <aura:set attribute="actions">
+            <lightning:buttonGroup>
+                <lightning:button label="Calculate" onclick="{!c.calcu}"/>
+                <lightning:button label="Clear" onclick="{!c.clearr}"/>
+            </lightning:buttonGroup>
+        </aura:set>
+        <lightning:input label="Enter Amount" value="{!v.amt}"/>
+        <lightning:input label="Enter Rate of Interest" value="{!v.roi}"/>
+        <lightning:input label="Tenure" value="{!v.tenure}"/><p></p>
+        
+        <b>EMI:{!v.res}</b><p></p><p></p>
+    </lightning:card>
+	
+</aura:component>

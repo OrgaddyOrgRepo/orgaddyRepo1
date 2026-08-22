@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Dynamic Form For Contact Creation">
+        <!-- <template for:each={rows} for:item="obj" for:index="index"> -->
+                <lightning-record-form 
+                            object-api-name={objectApiName}
+                            record-id={recId}
+                            fields={fields}>
+                    <lightning-messages></lightning-messages>
+                    <lightning-input-field field-name="FirstName"></lightning-input-field>
+                    <lightning-input-field field-name="LastName"></lightning-input-field>
+                    <lightning-input-field field-name="Phone"></lightning-input-field>
+                    
+                    
+                </lightning-record-form>
+        <!-- </template> -->
+    </lightning-card>
+</template>

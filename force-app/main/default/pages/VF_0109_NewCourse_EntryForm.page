@@ -1,0 +1,61 @@
+<apex:page >
+  <!--   <style>
+        .TopBanner
+        { 
+        	align :center;
+        	margin-left: 5% ;
+        	margin-right:5% ;
+        }
+         .alignCenter
+    	{ 
+        	align:center;
+   		 }
+        .SideTitle
+        {
+        	font-size:18px;
+    		font-style:sans-serif;
+        }
+        
+    </style>
+    <p.TopBanner>
+        <apex:image value="{!$Resource.ByJus_Banner}" height="120" width="1280"/>
+    </p.TopBanner>
+    <apex:form >
+    <apex:pageblock >
+     <tr>
+        <td>
+            <div.SideTitle>
+                <b>Course Edit</b>
+            </div.SideTitle>
+         </td>
+       <td>
+           <div class="alignCenter">
+               <apex:commandButton value="Save" action="{!SaveMeWithPageref}"/>
+               <apex:commandButton value="Save and New" />  
+                 <apex:commandButton value="Cancel" action="{!Cancel}" /> 
+            </div>
+           
+       </td>     
+    </tr>
+        <div>
+       <apex:pageblockSection title="Information" columns="1">
+         <apex:inputField value="{!Course__c.Course_Name__c}"/> 
+         <apex:inputField value="{!Course__c.Starting_Date__c}"/>
+         <apex:inputField value="{!Course__c.Closing_Date__c}"/>
+         <apex:inputField value="{!Course__c.Course_Timings__c}"/>
+         <apex:inputField value="{!Course__c.Faculty__c}"/>
+         <apex:inputField value="{!Course__c.Course_Duration__c}"/>
+     
+	 </apex:pageblockSection>
+        </div>
+        
+       
+        <div class="alignCenter">
+            <apex:commandButton value="Save" action="{!SaveMeWithPageref}"/> 
+                  <apex:commandButton value="Save and New" />  
+                 <apex:commandButton value="Cancel" /> 
+            </div>
+    </apex:pageblock>
+    </apex:form>
+-->
+</apex:page>

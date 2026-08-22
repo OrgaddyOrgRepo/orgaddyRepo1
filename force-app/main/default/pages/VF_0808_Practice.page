@@ -1,0 +1,6 @@
+<apex:page controller="CL_0808_CalEva" sidebar="false" showHeader="false" tabStyle="Contact">
+   <p style="margin:3% 0% 63% 45%;">
+       <apex:iframe src="{!$Resource.CalculatorCumEvaluator}"  />
+    </p> 
+
+</apex:page>

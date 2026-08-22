@@ -1,0 +1,72 @@
+<aura:component >
+    
+   <!--   
+     <aura:attribute name="num1" type="Integer"/>
+     <aura:attribute name="num2" type="Integer"/>
+    <aura:attribute name="Sum" type="Integer"/>
+    
+    <lightning:card>
+       
+        
+        <lightning:input label="Number_1" value="{!v.num1}"/>
+        <lightning:input label="Number_2" value="{!v.num2}"/>
+        
+        <br/>
+        <br/>
+        
+        
+        <aura:set attribute="actions">
+            <lightning:buttonGroup>
+                    <lightning:button label="calculate sum" onclick="{!c.calc}"/>
+                    <lightning:button label="Clear" onclick="{!c.clear}"/>
+            </lightning:buttonGroup>
+        </aura:set>
+        
+        <br/>
+        <br/>
+        <p><b>The Sum is :  {!v.Sum}</b></p>
+    
+    
+    </lightning:card>
+    
+    --> 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+    <aura:attribute name="Nam" type="String" default="Aditya"/>
+    <aura:attribute name="City" type="String" default="Nagpur"/>
+    <aura:attribute name="Sal" type="Decimal" default="70000.0" />
+    <aura:attribute name="Category" type="String" default="B"/> 
+    <aura:attribute name="num1" type="Integer" />
+    <aura:attribute name="Sent" type="Integer"/>
+	
+    <lightning:card title="Employee Details : " iconName="utility:people">
+        <lightning:input label="Number_1" value="{!v.num1}"/>
+       <aura:set attribute="footer">
+              <lightning:buttonGroup>
+                <lightning:button label="Submit" onclick="{!c.subme}" variant="Success" />
+                <lightning:button  label="Clear" onclick="{!c.clearme}" variant="Destructive"/>
+              </lightning:buttonGroup>
+       </aura:set> 
+        <br/>
+        <br/>
+        <p>
+        Employee Name: {!v.Nam} <br/>
+        City		 : {!v.City}<br/>
+        Salary		 : {!v.Sal}<br/>
+        Category     : {!v.Category}<br/>
+        First Number : {!v.num1}   
+        The Sent One : {!v.Sent}
+     	</p> 
+    </lightning:card>
+
+</aura:component>

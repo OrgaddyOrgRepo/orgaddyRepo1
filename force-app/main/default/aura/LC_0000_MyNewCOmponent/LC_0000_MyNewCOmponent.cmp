@@ -1,0 +1,3 @@
+<aura:component >
+    <lightning:button variant="success" label="Touch Me" onclick="{!c.alertMe}"/>
+</aura:component>

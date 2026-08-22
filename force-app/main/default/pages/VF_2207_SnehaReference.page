@@ -1,0 +1,152 @@
+<apex:page controller="CL_1107_CalEvalSum">
+    
+    <style>
+        h1{
+        	font-size: 17px;
+       		 text-align:center;    margin-left:20%;  }
+        
+        .My{
+        	position:fixed; width:35%; height:40%; border: 2px solid white; background:#E3E6F3; border-radius: 10px;}
+        
+        .Space{
+        		margin-left: 60px;}
+    </style>
+    <apex:form >
+    <apex:pageblock >  
+    
+    <div style="margin:auto; border: 4px solid black; width:500; height:620px; background-color: white;">   
+        <apex:image value="{!$Resource.TechnicalWhite}" style="width:1345px; height:620px" />
+        <table width="100%">
+            <tr>
+                <td class="My" style="top:0; left:0; margin:40px 20px 35px 150px;"><br/>
+                    
+                    <h1>Greater and Smaller Number Calculation</h1><br/><br/>
+                        
+                    <apex:pageBlockSection columns="1" >
+                
+                            <apex:pageBlockSectionItem >                                         <!--LOGICS are in PageBlockSection-->
+                                <apex:outputLabel value="Enter First No." />
+                                <apex:inputText value="{!Num1}" styleClass="Space" />
+                            </apex:pageBlockSectionItem>
+                
+
+
+
+
+
+
+							<apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Enter Second No." style="white-space: nowrap;"/>
+                                <apex:inputText value="{!Num2}" styleClass="Space" />
+                            </apex:pageBlockSectionItem>
+                
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Enter Third No." />
+                                <apex:inputText value="{!Num3}" styleClass="Space" />
+                            </apex:pageBlockSectionItem>
+                
+                            <apex:selectRadio label="Select Your Choice" value="{!Choice}">
+                                <apex:selectOption itemLabel="Greater" itemValue="Greater"/>
+                                <apex:selectOption itemLabel="Smaller" itemValue="Smaller"/>
+                            </apex:selectRadio>
+                
+                            <apex:commandButton value="Calculate" action="{!Main}" style=" margin-left: 200px;"/>
+                
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="The Result : "/>
+                                <apex:outputText value="{!Result}" styleClass="Space" />
+                            </apex:pageBlockSectionItem>
+                 
+                    </apex:pageBlockSection>
+                </td>
+
+
+
+
+
+
+<td class="My" style="top:0; left:50%; margin:40px 25px 35px 45px;"><br/>
+                    <h1>Simple Interest Calculation</h1><br/><br/>
+            <!--        <apex:pageBlockSection columns="1">
+                
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Enter Principal" styleClass="Space" />
+                                <apex:inputText value="{!P}" styleClass="Space" />
+                            </apex:pageBlockSectionItem>
+                            
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Enter Time(in Years)"/>
+                                <apex:inputText value="{!T}" styleClass="Space" />
+                            </apex:pageBlockSectionItem>
+                            
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Enter Rate of Interest"/>
+                                <apex:inputText value="{!R}" styleClass="Space" />
+                            </apex:pageBlockSectionItem><br/>
+                            
+                            <apex:commandButton value="Calculate" action="{!Main2}" style=" margin-left: 200px;" />
+                            
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="The calculated Simple Interest : " style="white-space: nowrap;" />
+                                <apex:outputText value="{!SI}" styleClass="Space" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="The total amount at the end of given tenure : "/>
+                                <apex:outputText value="{!A}" styleClass="Space" />
+                            </apex:pageBlockSectionItem>
+                       </apex:pageBlockSection>
+-->
+                  </td>
+            </tr>
+
+
+<tr>
+                <td class="My" style="top:50%; left:0; margin:15px 20px 25px 150px;"><br/><br/>
+                    <h1>The Sum of 'N' Even and Odd numbers</h1><br/><br/><br/>
+                <!--      <apex:pageBlockSection columns="1">
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Enter no. to get sum upto" style="white-space:nowrap;margin-left:40px;"/>
+                                <apex:inputText value="{!N}" styleClass="Space" />
+                          </apex:pageBlockSectionItem><br/>
+                
+                            <apex:selectRadio label="Select Your Choice" value="{!CH}">
+                                <apex:selectOption itemLabel="Even" itemValue="Even"/>
+                                <apex:selectOption itemLabel="Odd" itemValue="Odd"/>
+                            </apex:selectRadio>
+                
+                            <apex:commandButton value="Calculate" action="{!Main3}" style=" margin-left: 200px;"/>
+                            
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="The sum upto given number :"/>
+                                <apex:outputText value="{!Result1}" styleClass="Space" />
+                            </apex:pageBlockSectionItem>
+                     </apex:pageBlockSection>
+-->
+                </td>
+
+
+                <td class="My" style="top:50%; left:50%; margin:15px 25px 25px 45px;"><br/><br/>
+                    <h1>Factorial of A Number  </h1><br/><br/><br/>
+                        
+          <!--          <apex:pageBlockSection columns="1" >
+                        
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Enter Number :" style="white-space: nowrap;" styleClass="Space" />
+                                <apex:inputText value="{!Num}" styleClass="Space"  />
+                        </apex:pageBlockSectionItem><br/>
+                        <apex:commandButton value="Calculate" action="{!Main4}" style=" margin-left: 200px;" /><br/>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="The Result :"/>
+                                <apex:outputText value="{!Ans1}" styleClass="Space" />
+                            </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+-->
+                </td>
+           </tr>
+       </table>
+    </div>
+        
+    </apex:pageblock>
+    </apex:form>
+
+</apex:page>

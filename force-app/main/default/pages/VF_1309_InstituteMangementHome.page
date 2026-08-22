@@ -1,0 +1,66 @@
+<apex:page controller="CL_1309_TabsReference_InstManagement" showHeader="false" sidebar="true" standardStylesheets="false" >
+  <apex:form >
+   
+   <style>
+      body{ 	
+      		margin-left:5%;
+      		margin-right:5%;
+            border:4px black;	
+      		background-image:url("{!$Resource.TechnicalWhite}");
+            overflow:hidden;
+      		}
+      div{
+      		padding: 10px 10px 10px 10px;
+      		
+      		}
+       .tabs{ 
+       			background-color: lightGreen;
+       			border:3px solid black;
+       			padding: 5px 5px 5px 5px;
+       			}
+       .button {
+                  padding: 15px 25px;
+                  font-size: 24px;
+                  text-align: center;
+                  cursor: pointer;
+                  outline: none;
+                  color: #fff;
+                  background-color: Purple;
+                  border: none;
+                  border-radius: 15px;
+                  box-shadow: 0 9px #999;
+                }
+
+            .button:hover {background-color: #3e8e41}
+            
+            .button:active {
+              background-color: #3e8e41;
+              box-shadow: 0 5px #666;
+              transform: translateY(4px);
+            }
+      
+  </style>
+  <!-- #04AA6D -->
+  	<div style="left-margin:5%;right-margin:5%;">
+        <apex:image value="{!$Resource.Institute_Banner}" width="1150" height="250" />
+
+      </div>
+            <div  style="top:0 left:50%; margin: 40px 20px 250px 35px">
+                      <apex:commandButton value=" Enquiry " action="{!GotoEnquiryPage}" styleClass="button"/>
+                    <br/>
+                    <br/>
+                    <br/>
+                   
+                    
+                   	  <apex:commandButton value="Students" action="{!GotoStudentPage}" styleClass="button"/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    
+                    <!--  <apex:commandButton value=" Courses " action="{!GotoCoursePage}" styleClass="button"/> -->
+                </div> 
+            
+  
+  
+    </apex:form>
+</apex:page>

@@ -1,0 +1,70 @@
+<apex:page sidebar="false" showHeader="false">
+    <apex:form >
+    	
+   	
+    	<style>
+           
+             
+        .My{
+        	position:absolute; width:35%; height:40%; border: 2px solid white; background-image:{!$Resource.TechnicalWhite}; border-radius: 10px;}
+    	
+    
+   		</style>
+
+		<apex:pageBlock >
+           
+            <div style="margin:auto; border: 4px solid black; width:1270; height:595px; background-color: white;">
+            <apex:image value="{!$Resource.Cool}" width="1230" height="595"/> 
+            
+			<table >
+                <tr>
+                    <td class="My" style="top:0; left:0; margin:40px 20px 35px 150px;  ">
+                       <!-- <apex:image value="{!$Resource.TechnicalWhite}" width="35%" height="40%" />    -->
+                      THIs is the TD-1
+                      <p>
+                          This is The Second Line.
+                          
+                          
+                        </p>
+            	  
+                    </td >  
+                    <td  class="My" style="top:0; left:0; margin: 40px 20px 35px 640px;" >   <!-- Margin:Top Down Right Left-->
+                    	This is the TD-2
+                        .
+                        
+                    </td>
+                    
+                   
+                </tr>
+                <tr>
+                    <td class="My" style="top:45%;left:0; Margin: 40px 20px 35px 150px">
+                      This is The  TD-3
+                    
+                        .
+                        .
+                        .
+                    </td>
+                    
+                    
+                    <td class="My" Style="top:45%;left:0; Margin: 40px 20px 35px 640px">
+                    	This is The  TD-4
+                        .
+                        .
+                        .
+                        .
+                    
+                    </td>
+                
+                
+            
+                </tr>
+                
+            </table>
+    			 
+             
+                
+			     
+            </div>
+     	</apex:pageBlock>
+    </apex:form>
+</apex:page>

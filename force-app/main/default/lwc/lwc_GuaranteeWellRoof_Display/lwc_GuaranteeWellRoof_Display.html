@@ -1,0 +1,30 @@
+<template>
+    <!--
+    <lightning-card title="Roofs With Corresponding Guarantees using wrapper class in LWC" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template if:true={GuaranteeRoofs}>
+                <template for:each={GuaranteeRoofs} for:item="GR">
+                    <div key={GR.guaranteeRecord.id}>
+                        <div class="slds-text-heading_medium">{GR.guaranteeRecord.Name}</div>
+                        <template if:true={GR.contactList}>
+                            Roof Count is {GR.WrmCount}. Here is list:
+                            <ul class="slds-list_dotted">
+                                <template for:each={GR.WrmList} for:item="wrm">
+                                    <li key={wrm.id}>{wrm.Name}</li>
+                                </template>
+                            </ul>
+                        </template>
+                    </div>
+                </template>
+            </template>
+            <template if:true={error}>
+                {error}
+            </template>
+        </div>
+    </lightning-card>
+    -->
+
+    <template for:each={GuaranteeRoofs} for:item="c">
+        <p key={c.id}>{c.Name}</p>
+    </template>
+</template>

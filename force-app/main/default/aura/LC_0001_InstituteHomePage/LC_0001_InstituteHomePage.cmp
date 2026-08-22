@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
+<lightning:card class="backbody">
+   <div class="tabs">
+    <span>
+  	  <lightning:button label="TAB 1"  onclick="{!c.alerty}"/>
+    </span>
+   </div>
+    <div class="tabs">
+    <span>
+  	  <lightning:button label="TAB 2"  onclick="{!c.alerty}"/>
+    </span>
+   </div>
+    <div class="tabs">
+    <span>
+  	  <lightning:button label="TAB 3"  onclick="{!c.alerty}"/>
+    </span>
+   </div>
+</lightning:card>
+</aura:component>

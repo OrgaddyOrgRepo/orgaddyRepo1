@@ -1,0 +1,26 @@
+<apex:page controller="showCaseDataController" sidebar="false" showHeader="false">
+    <apex:form >
+      <apex:pageBlock >
+      <apex:outputPanel rendered="{!if(caseList.size > 0,true,false)}" >
+          
+          <!-- pageblock table with repeat for dynamic column display --> 
+          <apex:pageBlockTable id="table1" value="{!caseList}" var="rec">
+
+              <apex:repeat value="{!selectedFields}" var="fieldLabel"> 
+              
+                   <apex:column value="{!rec[fieldLabel]}"  rendered="{!fieldLabel !='CaseNumber'}"/> 
+                  <apex:column Headervalue="{!fieldLabel}"  rendered="{!fieldLabel ='CaseNumber'}">
+                        <a href="{!$Site.BaseUrl}/{!rec.Id}" target="_blank">{!rec[fieldLabel]}</a><br/>
+                  </apex:column> 
+              </apex:repeat> 
+          </apex:pageBlockTable>
+     
+        </apex:outputPanel>
+         <apex:outputPanel rendered="{!if(caseList.size = 0,true,false)}" >
+              <input type="button" style="margin-top:20px;" value="Create Case"/>
+          </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+   
+	
+</apex:page>

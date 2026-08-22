@@ -1,0 +1,21 @@
+<template>
+    
+
+    <lightning-button label="Compose" variant="brand-outline" onclick={handleComposeEmail} hidden={showComposeEmailSection}></lightning-button>
+    <template if:true={showComposeEmailSection}>
+        <lightning-combobox
+            label="From"
+            value={selectedFromAddress}
+            options={fromAddressOptions}
+            onchange={handleFromChange}>
+        </lightning-combobox>
+        <lightning-input label="To" value={toAddress} onchange={handleToChange}></lightning-input>
+        <lightning-input label="Subject" value={subject} onchange={handleSubjectChange}></lightning-input>
+        
+        <lightning-textarea label="Body" value={body} onchange={handleBodyChange}></lightning-textarea>
+        
+        <lightning-button label="Send Email" onclick={handleSendEmail}></lightning-button>
+        <lightning-button label="cancel" onclick={handleCancelEmailCompose}></lightning-button>
+    </template>
+    
+</template>

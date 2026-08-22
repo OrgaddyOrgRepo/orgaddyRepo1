@@ -1,0 +1,16 @@
+<template>
+    <lightning-button label="Show Contacts" onclick={openModal}></lightning-button>
+    <template if:true={isModalOpen}>
+        <div class="pdf">
+            <lightning-datatable
+                key-field="Id"
+                data={contactData}
+                columns={columns}
+                hide-checkbox-column
+            ></lightning-datatable>
+            <div class="slds-p-top_medium">
+                <lightning-button variant="brand" label="Download PDF" onclick={download}></lightning-button>
+            </div>
+        </div>
+    </template>
+</template>

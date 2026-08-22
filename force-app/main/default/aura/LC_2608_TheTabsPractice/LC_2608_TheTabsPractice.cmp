@@ -1,0 +1,47 @@
+<aura:component >
+    <div class="slds-form-element">
+<label class="slds-form-element__label" for="textarea-id-01">Enter Your Love Story Here</label>
+<div class="slds-form-element__control">
+<textarea id="textarea-id-01" placeholder="Write Here Guys…" class="slds-textarea"></textarea>
+</div>
+</div>
+    <lightning:layout>
+        <lightning:layoutItem size="4">
+        	<textarea class="slds-textarea">This is Re-Writable ..Used the lightning layout and layout item with size attribute equal to 4</textarea>
+        </lightning:layoutItem> 
+    </lightning:layout>
+</aura:component>
+    
+    											<!-- NOT COMPLETED 
+    
+    
+	<div class="slds-tabs_default slds-tabs__medium">
+        This is first UL
+    	<ul class="slds-tabs_default__nav" role="tablist">
+           
+           
+            
+            <li class="slds-tabs_default__item" title="Item 13" role="presentation">
+            <a  class="slds-tabs_default__link" href="#" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-3" id="tab-default-3_anchor_3">Item 13</a>
+            </li>
+           <li>
+           <a class="slds-tabs_default__link" href="#" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-2" id="tab-default-2_anchor_2">Item 12</a>
+            </li>
+         
+        </ul> 
+        
+        <div id="tab-default-1" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-1_anchor_1">Item One Content</div>
+        <div id="tab-default-2" class="slds-tabs_default__content slds-show" role="tabpanel" aria-labelledby="tab-default-2_anchor_2">Item  Two Content</div>
+        <div id="tab-default-3" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-3_anchor_3">Item Three Content</div>
+         
+        This is Second UL
+        <ul class="slds-tabs_default__nav" role="tablist">
+         
+        </ul> 
+        This is Third UL
+        <ul class="slds-tabs_default__nav" role="tablist">
+         
+        </ul> 
+    
+    </div>
+-->

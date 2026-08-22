@@ -1,0 +1,12 @@
+<aura:component>
+   <div class="bodyStyle">
+       <lightning:card>
+       </lightning:card>
+  
+    <lightning:card>
+    </lightning:card>
+    
+    <lightning:card>
+    </lightning:card>
+   </div>
+</aura:component>

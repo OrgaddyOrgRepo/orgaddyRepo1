@@ -1,0 +1,9 @@
+:host {
+    --slds-c-card-heading-font-size: 50px;
+    --slds-c-card-heading-font-weight: bold;
+    --slds-c-card-body-spacing-block-end: 1rem;
+    --slds-c-card-body-spacing-block-start: 1rem;
+    --slds-c-card-body-spacing-inline-end: 1.5rem;
+    --slds-c-card-body-spacing-inline-start: 1.5rem;
+	
+	}

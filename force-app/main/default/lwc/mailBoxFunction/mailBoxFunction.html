@@ -1,0 +1,13 @@
+<template>
+    <lightning-card>
+        <lightning-button label="Click to Add Recipients" variant="brand" 
+                        onclick={openPopUp}
+                        class="slds-float_right"
+                        icon-name="utility:add"
+                        icon-position="left"> </lightning-button>
+
+        <template if:true={showPopUp}>
+            Here I am Putting A popup
+        </template>            
+    </lightning-card>
+</template>

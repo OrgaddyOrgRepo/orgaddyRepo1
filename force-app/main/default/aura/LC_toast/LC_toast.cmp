@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    <aura:attribute name="flag" type="boolean" default="false"/>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="recordChiId" type="String"/>
+    <lightning:button label="show toast" variant="success" onclick="{!c.showit}"></lightning:button>
+    <b>{!v.recordId}</b>
+    <br/>
+    <b>{!v.recordChiId}</b>
+    <aura:if isTrue="{!v.flag}">
+    	<lightning:spinner alternativeText="Loading" size="medium" />
+    </aura:if>
+</aura:component>

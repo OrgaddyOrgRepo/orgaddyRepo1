@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Currency Converter">
+        <div class="slds-p-around_medium">
+            <lightning-layout>
+                <lightning-layout-item size="4">
+                    <lightning-input type="number" name ="baseCurrency" onchange={handleInput} value={value}>
+                    </lightning-input>
+                </lightning-layout-item>
+                    
+                <lightning-layout-item size="4">
+                    <div class="slds-m-around medium">{convertedvalue}</div>
+                </lightning-layout-item>
+                <div class="slds-p-around_medium">
+                    <lightning-button variant="success" label="Convert" onclick={handleConvert}></lightning-button>
+                </div>
+            </lightning-layout>
+        
+            
+        </div>
+    </lightning-card>
+
+</template>

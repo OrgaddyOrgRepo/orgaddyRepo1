@@ -1,0 +1,15 @@
+<aura:Component>
+	<lightning:card title="Card_One"  iconName="standard:account" footer="This is Card One Footer">
+       
+        This is the First Lightning Card....
+        
+        
+        <aura:set attribute="actions">
+          <lightning:button variant="base" label="Base" title="Base" onclick="{!c.clicked}"/>
+          <lightning:button variant="success" label="SUCCESS" title="Success" onclick="{!c.clicked}"/> 
+        </aura:set>
+        
+    </lightning:card>
+    
+    <Lightning:card title="Card_Two" iconName="standard:asset_action" />
+</aura:Component>

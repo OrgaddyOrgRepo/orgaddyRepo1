@@ -1,0 +1,26 @@
+<template>
+    <lightning-card  icon-name="standard-account">
+       <div class="slds-m-left_medium">
+            
+                  
+            
+            <div class="slds-size_1-of-3">
+                   <lightning-input variant="label-hidden" type="search" onchange={searchMee}></lightning-input>          
+            </div>
+        </div>
+    </lightning-card>
+       <br/>
+        <lightning-card title="Related Contacts" icon-name="standard-contact">
+            <div style="height: 300px;">
+                <lightning-datatable  key-field="id"  data={data}
+                        columns={columns}
+                        onrowaction={handleRowActions}
+                        show-row-number-column="true"
+                        hide-checkbox-column="true">
+                </lightning-datatable>
+            </div>
+        <br/>
+  
+   </lightning-card>
+
+</template>

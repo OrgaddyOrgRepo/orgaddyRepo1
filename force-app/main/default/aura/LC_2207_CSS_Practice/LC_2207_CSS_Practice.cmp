@@ -1,0 +1,19 @@
+<aura:component >
+    <lightning:buttonGroup>
+    	<lightning:button variant="base" label="Base"  iconName="utility:salesforce1" /> &nbsp;&nbsp;
+    	<lightning:button variant="brand" label="Brand" iconName="utility:bug" iconPosition="right"/>
+    </lightning:buttonGroup>
+     <lightning:buttonGroup>
+    	<lightning:button variant="brand-outline" label="Brand-Outline"  iconName="utility:campaign"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    	<lightning:button variant="container" label="Container" iconPosition="right" iconName="utility:salesforce1"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    	<lightning:button variant="success" label="Success"  iconName="utility:ribbon" iconPosition="right"/>
+	 </lightning:buttonGroup>
+    <lightning:card>
+   <aura:set attribute="actions">  <!--  -->
+        <lightning:button variant="destructive" label="Destructive"  iconName="utility:spinner" iconPosition="right"/>
+        <lightning:button variant="destructive-Text" label="destructive Text"  iconName="utility:clear" />
+        <lightning:button variant="inverse" label="inverse"  iconName="utility:jump_to_top"/>
+   </aura:set>                                                                                                                                           
+    </lightning:card>                                                                                                                                         
+	
+</aura:component>

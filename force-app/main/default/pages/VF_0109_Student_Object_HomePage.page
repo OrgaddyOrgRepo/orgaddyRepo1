@@ -1,0 +1,121 @@
+<apex:page standardController="Student__c" extensions="CL_0109_StudentObject_Homepage_Control">
+  <apex:form >
+    <script type="text/javascript">  
+    		
+                
+            function turnGreen(id) {
+                //alert("hi");
+                 var myPara = document.getElementById(id);
+                //alert(myPara);
+                 myPara.style.background = "#3e8e41";
+                mypara.style.color="white";
+                
+            }
+    		function turnPurple(id)
+    		{  
+                 var property = document.getElementById(id);
+                property.style.background = "purple";
+                property.style.color="white";
+            }
+        </script> 
+    
+    
+    <style>
+        body{
+        		background-image: url("{!$Resource.TechnicalWhite}");
+        		overflow-x:hidden;
+        		}
+        .bPageBlock{
+               background: #ccffcc  !important; //#ffffcc #ccffcc #dcd8f3
+               border-top: 4px solid purple !important;
+        	   border-left:  4px solid purple !important;
+               border-radius: 10px !important;
+            } 
+    p{
+    font-size: 12px;
+    }
+    .Sideheading{ font-size:22px;
+    	font-style:sans-serif;
+        
+        color:black;
+    	}
+    .lineHeight
+   	 { 
+        line-height:2.4;
+    	}
+    .tableHead{
+        		background-color: #e6b3e6 !important;
+              // background-image: none !important; //This is needed if you want to overwrite the header background
+    			color: #CC0000 !important; 
+    			font-size:100% !important;
+        			}
+    .button {
+                  padding: 5px 5px 5px 5px;
+                  
+                  text-align: center;
+                  cursor: pointer;
+                  outline: none;
+                  box-shadow: 0 5px #999;
+        		   }
+
+            .button:hover {background: #3e8e41}
+            
+            .button:active {
+              background: #3e8e41;
+              box-shadow: 0 5px #666;
+              transform: translateY(4px);
+            }
+        .contentStyle { font-size:12px; }
+    
+       		
+     
+
+</style>
+   
+    
+           <div style="margin-left:0%;margin-right:0%;">
+             
+       			 <apex:image value="{!$Resource.ByJus_Banner}" height="200" width="100%"/>
+           </div>
+        <p>  
+           
+          <div class="header">
+            <span> <apex:image value="{!$Resource.Student_Icon}" height="40" width="40"/>
+           </span>
+        
+            <span class="Sideheading">
+       			<b>STUDENT DATA</b>
+            </span>
+           
+           <span >
+               <apex:commandButton id="check" value="New" action="{!CreateRecord}" styleClass="button" 
+                                    style="background:purple;color:white;font-size:24px; border-radius: 15px;                                                                          width:120px;
+                                           height:40px;margin-left:800px;"
+                                   onmouseover="turnGreen('{!$Component.check}')"
+                                   onmouseout="turnPurple('{!$Component.check}')"/>
+                                                
+           </span>
+          </div>
+         </p>
+    <div style="margin-left:5%;margin-right:5%;padding:10px 10px 10px 10px;">
+    <body onload="init()">
+        
+        
+    <apex:pageBlock mode="detail" >
+       
+      <apex:pageBlockTable id="StudentTable" value="{!tableData}" var="TD">
+            <apex:column headerClass="tableHead" >
+                <apex:outputLink value="/apex/VF_0109_StudentEnquiryDetail_Individual">{!TD.Name}
+                    <apex:param name="Id" value="{!TD.id}" assignTo="{!recId}"/>  <!-- Pass Value To the New PAGE Refered-->
+                </apex:outputLink>
+            </apex:column>
+            <apex:column headerClass="tableHead" value="{!TD.Name}"/>
+            <apex:column headerClass="tableHead" value="{!TD.Mobile_No__c}"/>
+            <apex:column headerClass="tableHead" value="{!TD.Email__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+   </body> 
+   </div>
+    </apex:form>
+
+</apex:page>

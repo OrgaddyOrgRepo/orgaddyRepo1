@@ -1,0 +1,128 @@
+<apex:page controller="CL_SumOfOddOrEvenNumbers" showHeader="false" Sidebar="false"  pageStyle="background:LightBLue;">
+   
+    <style>
+    	body{ background-color:#ffccff;
+        		padding:5px;
+        		border:7px Purple solid;
+        }
+        
+       
+    
+    </style>
+    <apex:form >
+       
+         <apex:pageblock >
+        	<p style="text-align:center;border:Yellow solid;margin-left:15%;margin-right:14%;padding:5px;">
+                
+            	<apex:image height="150" width="692" value="{!$Resource.CalculatorCumEvaluator}"/>
+			</p>
+        </apex:pageblock> 
+       
+        
+	   <apex:tabPanel >
+           <apex:tab Label="Evaluator(Greater Or Smaller Number)" style="Font-size:25px;" >
+        <apex:pageblock >
+            
+            <p style="color:purple;Font-size:30px;font-style:Sans serif;text-align:center;">
+                <em>Evaluator</em>
+                <p Style="color:Green;Font-size:25px;text-align:center;">(Greater or Smaller Number)</p>
+            </p>
+        	<br/>
+        	<br/>
+            <apex:pageBlockSection title="Enter the Numbers" columns="1">
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter First Number : "/>
+                    <apex:inputText value="{!Num1}"/>
+                </apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Second Number : "/>
+                    <apex:inputText value="{!Num2}"/>
+                </apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Third Number : "/>
+                    <apex:inputText value="{!Num3}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:selectRadio value="{!Choice}">
+                    <apex:selectOption itemLabel="Greatest Number" itemValue="Greatest"/>
+                    <apex:selectOption itemLabel="Smallest Number" itemValue="Smallest"/>     	
+                </apex:selectRadio>
+			
+				<apex:commandButton value="Evaluate" action="{!GreaterSmallerMain}"/>
+                <apex:outputLabel value="The Result is : " />
+                <apex:outputText value="{!Result}"/>
+            </apex:pageBlockSection>
+        </apex:pageblock>
+           </apex:tab>
+            
+        
+    <br/>
+   
+        
+        <apex:tab label="Sum Calculator" labelWidth="100" style="Font-size:20px;"> 
+  <p style="background-color:LightBlue; border:Tomato dotted;"/>  
+       
+        
+        <apex:pageblock >
+            <p style="color:IndianRed;Font-size:30px;font-style:Sans serif;text-align:center;">
+                <em>Sum Calculator</em>             
+            </p>
+            <br/>
+            <br/>
+        	<apex:pageBlockSection title="Sum Of Odd or Even upto the Given Number" columns="1">
+                <br/>
+            	<apex:pageBlockSectionItem >
+                    <apex:OutputLabel value="Enter A number : "/>
+                    <apex:inputText value="{!Num}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:selectRadio Label="Select the Nature of Sum : " value="{!Choice2}" style="color:Blue;">
+                    <apex:selectoption itemLabel="Sum of Even Numbers" itemValue="Even"/>
+                    <apex:selectOption itemlabel="Sum of Odd Numbers" itemValue="Odd"/>
+                </apex:selectRadio>
+                
+                <apex:commandButton value="Calculate Sum" action="{!sumMain}"/>
+                
+                <apex:outputText label="The Sum of {!NatureOfNum} numbers upto {!Num} is : " value="{!Sum}" />
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:tab> 
+         
+   		 <br/>
+       <apex:tab Label="Simple Interest Calculator" style="Font-size:25px;"> 
+ 		 <p style="background-color:LightBlue; border:Tomato dotted;"/>  
+    <apex:pageblock >
+        
+        
+        <p style="color:Maroon;Font-size:30px;font-style:Sans serif;text-align:center;">
+                <em>Simple Interest Calulator</em>
+            
+        </p>
+        <br/>
+        <br/>       
+    	<apex:pageBlockSection title="Enter the Details" columns="1">
+        	<apex:pageblocksectionitem >
+                 <apex:outputLabel value="Principal : "/>
+               	 <apex:inputText value="{!Principal}"/>
+            </apex:pageblocksectionitem>
+            <apex:pageblocksectionitem >
+           		 <apex:outputLabel value="Number of Years : "/>
+               	 <apex:inputText value="{!NoY}"/>
+            </apex:pageblocksectionitem>
+            <apex:pageblocksectionitem >
+            	 <apex:outputLabel value="Rate Of interest : "/>
+                 <apex:inputText value="{!RoI}"/>
+            </apex:pageblocksectionitem>
+            
+            <apex:commandButton value="Calculate Simple Interest" action="{!Main}" alt="Simple Interest" accessKey="Enter"/>
+            
+            <apex:pageBlockSectionItem >
+           		 <apex:OutputLabel value="The Simple-Interest for {!NoY} years : "/>
+                <apex:outputText value="{!Simple_Interest}"/>
+            </apex:pageBlockSectionItem>                  
+        </apex:pageBlockSection>
+    </apex:pageblock>
+    </apex:tab>    
+     </apex:tabPanel>   
+    </apex:form>
+</apex:page>

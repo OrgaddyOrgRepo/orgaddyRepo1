@@ -1,0 +1,47 @@
+<apex:page controller="sampleCon" >
+    <apex:form >
+         <!--
+        <apex:selectCheckboxes value="{!countries}">
+            <apex:selectOptions value="{!items}"/>
+        </apex:selectCheckboxes><br/>
+        <apex:commandButton value="Test" action="{!test}" rerender="out" status="status"/>
+  
+    <apex:outputPanel id="out">
+        <apex:actionstatus id="status" startText="testing...">
+            <apex:facet name="stop">
+                <apex:outputPanel>
+                    <p>You have selected:</p>
+                    <apex:dataList value="{!countries}" var="c">{!c}</apex:dataList>
+                </apex:outputPanel>
+            </apex:facet>
+        </apex:actionstatus>
+    </apex:outputPanel>
+   
+      <apex:outputPanel >
+          
+    </apex:outputPanel>
+       -->   
+        <apex:pageBlock title="Filter" tabStyle="Account" >
+            <apex:pageBLockSection collapsible="true" title="Priority" >
+                <apex:pageBlockSectionItem >
+                     <apex:selectCheckboxes value="{!choices}" layout="pageDirection">  
+                    <apex:selectOptions value="{!Priorities}"/><br/>  
+                </apex:selectCheckboxes> 
+                </apex:pageBlockSectionItem>
+               
+                <apex:commandButton value="Test" action="{!test}" rerender="CheckBoxSelected" status="status"/>
+                <apex:outputPanel id="CheckBoxSelected">
+                    <apex:actionstatus id="status" startText="testing...">
+                        <apex:facet name="stop">
+                            <apex:outputPanel >
+                                <p>You have selected:</p>
+                                <apex:dataList value="{!choices}" var="c">{!c}</apex:dataList> 
+                            </apex:outputPanel>
+                        </apex:facet>
+                    </apex:actionstatus>
+                </apex:outputPanel>
+            </apex:pageBLockSection>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

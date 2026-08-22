@@ -1,0 +1,99 @@
+<apex:page standardController="Student__c" extensions="CL_0109_StudentEntryForm_Control">
+    <style>
+    p{
+    font-size: 12px;
+    }
+    .title{ font-size:18px;
+        font-style:sans-serif;
+        }
+    .lineHeight
+     { 
+        line-height: 1.4;
+        }
+    .alignCenter
+        { 
+            align:center;
+         }
+      .TopBanner
+        { 
+            align :center;
+            margin-left: 5% ;
+            margin-right:5% ;
+        }  
+     
+
+</style>
+   
+    <apex:form >
+           <p.TopBanner>
+                 <apex:image value="{!$Resource.ByJus_Banner}" height="120" width="1280"/>
+           </p.TopBanner>
+        <p>  <tr>
+              <td>
+                 <apex:image value="{!$Resource.Student_Icon}" height="40" width="40"/>
+             </td>
+     
+              <td>
+                <div class="lineHeight">
+                   Student Entry Form  Edit
+                   <p class="title"><b>New Student</b></p>
+                 </div>
+             </td>
+          </tr>               
+         </p>
+    <apex:pageBlock >
+       <p>
+         
+        <b>Candidate Enquiry Edit</b>  
+         <div class="alignCenter">
+             <apex:commandButton value="Save" action="{!Save}"/>
+              <apex:commandButton value="Save and New" />  
+             <apex:commandButton value="Cancel" /> 
+        </div>
+        </p> 
+       
+        <br/>
+         <apex:pageblockSection title="Student Information" id="pbs1" columns="2" collapsible="false">
+             <apex:inputField value="{!Student__c.Name}" />
+             <apex:inputField value="{!Student__c.Gender__c}"/>
+             <apex:inputField value="{!Student__c.Guardian__c}"/>
+             <apex:inputField value="{!Student__c.Date_Of_Birth__c}"/>
+             <apex:inputField value="{!Student__c.Guardian_Name__c}"/>
+             <apex:inputField value="{!Student__c.Father_Occupation__c}"/>
+             <apex:inputField value="{!Student__c.Community__c}"/>
+             <apex:inputField value="{!Student__c.Mother_Occupation__c}"/>
+         <!--    <apex:inputField value="{!Student__c.Course__c}"/>              -->
+             <apex:inputField value="{!Student__c.Family_Annual_Income__c}"/>
+             <apex:inputField value="{!Student__c.Proofs_Submitted__c}"/>
+             <br/>
+             <apex:inputField value="{!Student__c.Passport_No__c}"/>
+        </apex:pageblockSection>
+        
+        <apex:pageBlockSection title="Educational Details" id="pbs2" columns="1" collapsible="false">
+              <apex:inputField value="{!Student__c.Educational_Qualification__c}"/>
+              <apex:inputField value="{!Student__c.Year_Of_Pass__c}"/>
+              <apex:inputField value="{!Student__c.Passed_Out_Organisation__c}"/>
+        </apex:pageBlockSection>
+             
+        <apex:pageBlockSection title="Contact Details" id="pbs3" columns="2" collapsible="false">
+             <apex:inputField value="{!Student__c.Mobile_No__c}"/>
+             <apex:inputField value="{!Student__c.Father_Mobile_No__c}"/>
+             <apex:inputField value="{!Student__c.Address_For_Correspondence__c}"/>
+             <apex:inputField value="{!Student__c.Email__c}"/>
+             <apex:inputField value="{!Student__c.Permanent_Address__c}"/>
+        </apex:pageBlockSection>
+        
+        
+        <apex:pageBlockSection title="Course Information" id="pbs4" columns="2" collapsible="false">
+      <!--  <apex:inputField value="{!Student__c.Course__c}"/>         -->
+             
+        </apex:pageBlockSection>
+        <div class="alignCenter">
+             <apex:commandButton value="Save" action="{!Save}"/>
+             <apex:commandButton value="Save and New" />  
+             <apex:commandButton value="Cancel" /> 
+        </div>
+        
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

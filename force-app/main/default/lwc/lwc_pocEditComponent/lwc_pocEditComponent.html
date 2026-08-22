@@ -1,0 +1,12 @@
+<template>
+    <a href="#" onclick={handleGoBackWithoutChanges}>Go Back To Table</a>
+    <lightning-card>
+        <lightning-input label="First Name"  
+                         value={firstName} name ="firstnameInput" onchange={changeHandler}></lightning-input>
+        <lightning-input label="Last Name" value={lastName} name ="lastnameInput" onchange={changeHandler}></lightning-input>
+        <lightning-input label="Email" value={email} name="emailInput" onchange={changeHandler}></lightning-input>
+        <lightning-input label="City" value={mailingCity} name="cityInput" onchange={changeHandler}></lightning-input>
+        <lightning-button variant="success" onclick={updateHandler} label="Update"></lightning-button>
+    </lightning-card>
+    
+</template>

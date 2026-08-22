@@ -1,0 +1,23 @@
+.THIS.backbody
+{ 
+   background-image: url('/resource/1626947864000/TechnicalWhite') !important;
+}
+
+.THIS .tabs button
+{
+   /* margin: 100px 300px 550px 100px;*/
+    width:150px;
+    height:80px;
+ 	font-size:30px;
+    font-style: sansSerif;
+    font-weight: bold;
+    color:white;
+    border-radius: 25px;
+}
+.THIS .tabs button:hover{
+    background:#46d246;
+    
+}
+.THIS .tabs button{
+    background:purple;
+}

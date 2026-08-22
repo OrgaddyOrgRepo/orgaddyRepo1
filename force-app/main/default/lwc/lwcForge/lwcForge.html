@@ -1,0 +1,114 @@
+<template>
+    <lightning-card title="LWC Forge (Create LWCs from the Org)">
+        <div class="slds-p-around_medium slds-grid slds-wrap slds-gutters">
+
+            <!-- Left column: settings -->
+            <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-3">
+                <lightning-input
+                    type="text"
+                    label="Component Name (e.g., HelloWorld)"
+                    value={name}
+                    onchange={handleName}
+                    message-when-pattern-mismatch="Start with a letter. Use letters, numbers, underscore."
+                    pattern="^[A-Za-z][A-Za-z0-9_]*$">
+                </lightning-input>
+
+                <lightning-input
+                    class="slds-m-top_small"
+                    type="number"
+                    label="API Version"
+                    value={apiVersion}
+                    step="0.1"
+                    onchange={handleApiVersion}>
+                </lightning-input>
+
+                <lightning-input
+                    class="slds-m-top_small"
+                    type="text"
+                    label="Description (optional)"
+                    value={description}
+                    onchange={handleDescription}>
+                </lightning-input>
+
+                <lightning-input
+                    class="slds-m-top_small"
+                    type="toggle"
+                    label="Expose component"
+                    checked={isExposed}
+                    onchange={handleExposed}>
+                </lightning-input>
+
+                <lightning-dual-listbox class="slds-m-top_small"
+                    name="targets"
+                    label="Targets"
+                    source-label="Available"
+                    selected-label="Selected"
+                    options={targetOptions}
+                    value={targets}
+                    onchange={handleTargets}>
+                </lightning-dual-listbox>
+
+                <div class="slds-m-top_small">
+                    <lightning-combobox
+                        name="template"
+                        label="Starter template"
+                        value={templateName}
+                        options={templateOptions}
+                        onchange={handleTemplateChange}>
+                    </lightning-combobox>
+                    <lightning-button class="slds-m-top_x-small"
+                        label="Apply Template"
+                        onclick={applyTemplate}>
+                    </lightning-button>
+                </div>
+
+                <div class="slds-m-top_medium">
+                    <lightning-button variant="brand"
+                                      label={saveLabel}
+                                      onclick={createComponent}
+                                      disabled={disableSave}>
+                    </lightning-button>
+                    <template if:true={lastCreatedId}>
+                        <div class="slds-text-color_success slds-m-top_small">
+                            Created Bundle Id: {lastCreatedId}
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <!-- Right column: editors -->
+            <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-3">
+                <lightning-textarea
+                    class="code"
+                    label="HTML"
+                    value={htmlSource}
+                    onchange={handleHtml}
+                    maxlength="131072"
+                    spellcheck="false">
+                </lightning-textarea>
+
+                <lightning-textarea
+                    class="code slds-m-top_small"
+                    label="JavaScript"
+                    value={jsSource}
+                    onchange={handleJs}
+                    maxlength="131072"
+                    spellcheck="false">
+                </lightning-textarea>
+
+                <lightning-textarea
+                    class="code slds-m-top_small"
+                    label="CSS (optional)"
+                    value={cssSource}
+                    onchange={handleCss}
+                    maxlength="131072"
+                    spellcheck="false">
+                </lightning-textarea>
+            </div>
+        </div>
+
+        <template if:true={isSaving}>
+            <lightning-spinner alternative-text="Creating..." size="small"></lightning-spinner>
+        </template>
+    </lightning-card>
+</template>

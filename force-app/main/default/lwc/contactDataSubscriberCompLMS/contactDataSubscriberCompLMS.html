@@ -1,0 +1,9 @@
+<template>
+     <template if:true={contactData}>
+        <template for:each={contactData} for:item="item">
+            <p key={item.status}>
+                {item.status} – {item.date}
+            </p>
+        </template>
+    </template>
+</template>

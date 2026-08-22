@@ -1,0 +1,19 @@
+<template>
+
+    <lightning-button label="Show Data" onclick={pleaseShowCard} variant="success"></lightning-button>
+    <lightning-button label="Remove Card" onclick={pleasehide} variant="brand"></lightning-button>
+    <template if:true={showCard}>
+
+        <lightning-card title="Contacts">
+            <lightning-datatable key-field={id}
+            data={contacts_data}
+            hide-checkbox-column="false"
+            onrowselection={handleRowSelection}
+            columns = {columns}></lightning-datatable>
+        </lightning-card>
+    </template>
+
+<lightning-card>
+  <b>  {idd}</b>
+</lightning-card>
+</template>

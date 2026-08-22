@@ -1,0 +1,39 @@
+<aura:component >
+	<p style="color:purple;font-size:80px; text-align:center;">Calculator</p>
+   <!--Declaration of variables -->
+        <aura:attribute name="num1" type="decimal" />
+        <aura:attribute name="num2" type="decimal"  />
+        <aura:attribute name="num3" type="decimal" />
+        <aura:attribute name="result" type="decimal" />
+    
+            
+<!--UI Part-->        
+    <lightning:card title="Data Insertion">
+        <!-- User Interface-->
+        <lightning:input label="Enter First Number: " value="{!v.num1}"/>
+        <lightning:input label="Enter Second NUmber : " value="{!v.num2}"/>
+        <lightning:input label="Enter Third Number : " value="{!v.num3}" />
+        
+        <!-- Button-->
+        
+<!-- Button in the Title Region-->        
+   <aura:set attribute="title">    
+    <lightning:button variant="brand" label="Calculate" onclick="{!c.calc}"/>
+   </aura:set>     
+    
+   <aura:set attribute="actions">
+       <lightning:button variant="brand" label="Calculate" onclick="{!c.calc}"/>  
+   </aura:set>
+    
+        <aura:set attribute="footer">
+            <lightning:button variant="brand" label="Calculate" onclick="{!c.calc}"/>  
+        </aura:set>
+       
+        
+        
+        
+	**********************************RESULT****************************************
+   <b> The Result is : {!v.result}</b>
+
+    </lightning:card>
+</aura:component>

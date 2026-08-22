@@ -1,0 +1,63 @@
+<apex:page standardController="Opportunity" recordSetVar="opps">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <apex:includeScript value="/soap/ajax/53.0/connection.js"/>
+    <apex:includeScript value="/soap/ajax/53.0/apex.js"/>
+    <script type="text/javascript">
+                sforce.connection.sessionId = "{!$Api.Session_ID}";
+                $( window ).ready(function() {            
+                    createOpportunity();
+                });
+
+    var recordId = '{!$CurrentPage.parameters.Id}';
+    var OBJECT_NAME_HERE ='Opportunity';
+    var RECORDTYPE_NAME_HERE ='Internship Seats';
+    var url  ='/006/e?retURL=%2F&'
+
+
+    try{ 
+        //Query the record type
+        var RecordTypeIds = sforce.connection.query("SELECT Id FROM RecordType WHERE SObjectType='" + OBJECT_NAME_HERE + "' AND Name='" + RECORDTYPE_NAME_HERE + "' LIMIT 1");
+        var rtTypes= RecordTypeIds.getArray("records");
+        var RecordTypeId = rtTypes[0].Id;
+
+        //Query the parent record
+        //var cons = sforce.connection.query("SELECT Id,Name FROM Account WHERE Id = '" + recordId + "'");
+        // var stats= cons.getArray("records");
+
+        /*    //Internship Seats Opportunity
+        url +='RecordType='+RecordTypeId;
+        url +='&CF00N50000001oGFd='+stats[0].Name;
+        url +='&CF00N50000001oGFd_lkid='+stats[0].Id;
+        url +='&opp11=Open';      
+  		*/
+        //Default values
+        var defaultValues = { 
+            'Name' : 'My Opportunity Default',
+            // 'AccountId':stats[0].Id,  
+            // 'Corporate_Account__c' : stats[0].Id,
+            'StageName':'Open',
+            Description:'Default Description'
+           
+        }
+
+        } 
+    catch(e){ 
+        alert('An Error has Occured. Error:' +e); 
+    }
+
+    function createOpportunity(){
+
+        if( (typeof sforce != 'undefined') && sforce && (!!sforce.one) ) { 
+            sforce.one.createRecord('Opportunity',RecordTypeId,defaultValues);
+        }else
+        {
+            
+            window.location='{!URLFOR($Action.Opportunity.New, null, [RecordType='+RecordTypeId+',save=1], true)}';           
+           
+        }
+
+    } 
+
+    </script>
+</apex:page>

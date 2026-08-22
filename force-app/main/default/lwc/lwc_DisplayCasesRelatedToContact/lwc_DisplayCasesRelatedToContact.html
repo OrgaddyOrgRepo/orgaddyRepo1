@@ -1,0 +1,51 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card>
+        <lightning-datatable key-field= {id} 
+         data = {data}
+        columns= {columns}
+        hide-checkbox-column="true"
+        >
+        
+        </lightning-datatable>
+    </lightning-card>
+    <br/>
+    
+    <br/>
+    <lightning-card title="Upload" icon-name="custom:custom19">
+        <lightning-file-upload
+            label="Attach Document"
+            name="fileUploader"
+            accept={acceptedFormats}
+            record-id={recordId}
+            onuploadfinished={handleDocUpload}
+            multiple>
+    </lightning-file-upload>
+</lightning-card> 
+
+
+
+<!-- MODAL Template  -->
+<lightning-card>
+     <template if:true={openModal}>
+        <section aria-modal="true" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container ">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_small">Modal Header</h2>
+                    <lightning-icon class="slds-modal__close" icon-name="utility:close" size="small" onclick={closeModal}></lightning-icon>
+                </header>
+                <div class="slds-modal__content">
+                    <div class="slds-p-around_small">
+                        <p>Forceblogs.com.</p><br />
+			 <p>Hello! Readers</p>
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="brand" label="Cancel" onclick={closeModal} class="slds-p-around_x-small"></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    </lightning-card> 
+</template>

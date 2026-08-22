@@ -1,0 +1,44 @@
+<!-- Fisrt Page Parent of Create Email Page-->
+
+<template>
+    <lightning-card >
+        <div class="slds-p-around_medium">
+          <template if:true={ShowSentMailPage}>
+              <div class="slds-p-around_x-small topBg">
+                  <lightning-layout>
+                      <lightning-layout-item size="9">
+                          <lightning-input  class="slds-size_6-of-8" onchange={searchRecipientsinTable}></lightning-input>
+                      </lightning-layout-item> 
+                     
+                      <lightning-layout-item size="1">
+                        
+                        
+                            
+                      </lightning-layout-item>
+                      <lightning-layout-item size="2">
+                          <br/>
+                          <lightning-button label="Filter"  
+                            onclick={filter}
+                            icon-name="utility:filterList"
+                            icon-position="left"
+                            class="slds-float_left"
+                            > </lightning-button>
+                            <lightning-button label="Create New Mail" variant="brand" 
+                            onclick={CreateMail}
+                            class="slds-float_right"
+                            > </lightning-button>
+                          
+                       </lightning-layout-item>
+                  </lightning-layout>
+        
+        </div>
+    </template>
+</div>
+
+        <template if:true={showCreateMailPage}>
+         <c-lwc_mailbox></c-lwc_mailbox>
+        </template>
+
+    </lightning-card>
+
+</template>

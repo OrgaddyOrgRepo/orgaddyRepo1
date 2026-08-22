@@ -1,0 +1,14 @@
+<template>
+    <lightning-combobox
+            name="progress"
+            label="Status"
+            value={selectedList}
+            placeholder="Select a ListView"
+            options={listViewData}
+            onchange={handleChange} ></lightning-combobox> 
+
+            <template if:true={viewSelected}>
+                <c-list-cases-child-component list-name={viewSelected}></c-list-cases-child-component>
+            </template>
+      
+</template>

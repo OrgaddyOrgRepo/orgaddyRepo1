@@ -1,0 +1,34 @@
+<template>
+    <template if:true={columns}>
+  <lightning-card>
+    <div class="slds-grid slds-wrap slds-gutters searchCommitee slds-grid_vertical-align-center">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+            <lightning-input name="enter-search" variant="label-hidden" onchange={handleTableSearch}
+            placeholder="Search by Keyword" type="search" label="Search by Keyword">
+            </lightning-input>
+        </div>
+    </div>
+
+        <!-- SEARCH BAR ENDS -->
+       <template if:false={noRecordsFound}>
+            <lightning-datatable key-field= "Id"
+            data={tableData}
+            columns={columns}
+            draft-values={drafValues}
+            onsave={saveHandleAction}
+            hide-checkbox-column 
+            show-row-number-column
+            ></lightning-datatable>
+        </template>
+        <template if:true={noRecordsFound}>
+            <br/>
+            <b style="text-align: center;">NO RECORD FOUND FOR YOUR SEARCH...!</b>
+        </template>
+
+
+        </lightning-card> 
+        </template>
+      
+  
+    
+</template>

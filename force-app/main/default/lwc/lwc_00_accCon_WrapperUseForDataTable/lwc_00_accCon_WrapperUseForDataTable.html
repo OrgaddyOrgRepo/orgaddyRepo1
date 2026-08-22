@@ -1,0 +1,36 @@
+<template>
+ <lightning-card title="Account and CONTACTS">
+      <template for:each={aacAnditsContacts} for:item="ACCON">
+        <template if:true={ACCON.contactCount} >
+           <p key={ACCON.accRecord.Name}> <lightning-datatable key-field={ACCON.accRecord.Name}
+                                data={ACCON.conList}
+                                columns={columns}
+                                show-row-number-column="true"
+                                onrowaction={handleRowAction}>
+                            </lightning-datatable>
+                        </p>
+  <!--      <p key={ACCON.id}><strong>ACCOUNT Name: {ACCON.accRecord.Name}</strong></p>
+            <template for:each={ACCON.conList} for:item="con">
+               
+                        <p class="slds-box" key={con.id}>
+                        Contact Name : {con.Name}   <br/>
+                        Mobile: {con.MobilePhone}<br/>  
+                        City : {con.MailingCity}<br/>
+                        Id: {con.id}
+                        </p>         
+                    </template>
+   -->                
+                </template>
+       </template>
+                   
+                        
+                
+              
+              
+                  
+       
+                     
+                   
+                        
+   </lightning-card>
+</template>

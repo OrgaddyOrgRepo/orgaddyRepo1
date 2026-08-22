@@ -1,0 +1,63 @@
+<template>
+    
+    <lightning-card title="Create Record Component" class="myCard">
+        <lightning-button label="Create Record" onclick={handleCreateRecord}></lightning-button>
+
+        <div class="slds-p-around_large slds-text-heading_medium slds-text-color_inverse-weak" >   
+           <div class="label">Enter Name :</div>  <br/>
+            <input  class="slds-input" name="firstNameField" value={value} onchange={handleInputChange} readonly={isReadOnly}/> 
+            <lightning-input  label="Enter  Phone : " name="middleNameField" value={value} onchange={handleInputChange} readonly={isReadOnly}></lightning-input>
+            <lightning-input class="myinput" label="Enter  Email : " name="lastNameField" value={value} onchange={handleInputChange} readonly={isReadOnly}></lightning-input>
+        </div>
+
+        <template if:true={error}>
+
+            <b>Your component apex call has got this error : {error} </b>
+        </template>
+        <template if:true={recId}>
+            <em>Your contact insertion is successful with this id : <a  onclick={navigateToEditContactPage}>{recId}</a></em>
+        </template>
+
+        <lightning-button label="hello" onclick={handleBodyFunction} variant="Brand-Outline"></lightning-button>
+
+         <!-- when this button is clicked, ,we wll open a popup(Modal popup) -->
+         <!-- We will do this using sustom event and simple way also...
+          in case of custom event we will use seaparte lwc componet for modal popup  Gaurav FOLDER-->
+    <lightning-input
+    type="text"
+    message-when-pattern-mismatch="Too many characters"
+    pattern= ". {0,5}"
+    label="Enter up to 5 characters"
+>
+</lightning-input>
+</lightning-card>
+
+
+<lightning-card>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_5-of-12">
+            <span><input  class="slds-input" name="firstNameField" value={value} onchange={handleInputChange} readonly={isReadOnly}/> </span>
+        </div>
+        <div class="slds-col">
+        <span> <input  class="slds-input" name="firstNameField" value={value} onchange={handleInputChange} readonly={isReadOnly}/>  </span>
+        </div>
+        <div class="slds-col">
+            <span> <input  class="slds-input" name="firstNameField" value={value} onchange={handleInputChange} readonly={isReadOnly}/>  </span>
+            </div>
+            <div class="slds-col">
+                <span> <input  class="slds-input" name="firstNameField" value={value} onchange={handleInputChange} readonly={isReadOnly}/>  </span>
+                </div>
+                <div class="slds-col">
+                    <span> <input  class="slds-input" name="firstNameField" value={value} onchange={handleInputChange} readonly={isReadOnly}/>  </span>
+                    </div>
+
+    </div>
+</lightning-card>
+</template>
+<!-- Onclick event ===> when you click the button
+    onChange  ===> When you change input field value, even for single letter change, the onchnage method is run.. 
+onBlurr
+onFocusOut
+onMouseUp
+omWheelUp
+'Browser events' -->

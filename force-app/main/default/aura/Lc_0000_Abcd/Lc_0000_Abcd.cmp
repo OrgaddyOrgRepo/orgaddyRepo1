@@ -1,0 +1,6 @@
+<aura:component >
+    <lightning:card>
+     <lightning:button variant="destructive" label="My Button" onclick="{!c.alert}"/>
+    </lightning:card>
+	
+</aura:component>

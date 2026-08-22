@@ -1,0 +1,70 @@
+<template>
+
+            <div  class="slds-box slds-theme_shade" data-target="bubbling-example" onclick={toggleCompHandler}>
+
+                Bubbling Example
+            </div>
+
+            <div data-id="bubbling-example" class="slds-hide">
+                <div   >   
+                    <lightning-card title="JavaScript Practice">
+
+                    <div class="slds-p-around_medium">
+
+                        <div
+                            data-parent-value="PARENT-100"
+                            onclick={handleClick}
+                            class="parent-box">
+
+                            Parent Division
+
+                            <div
+                                data-child-value="CHILD-200"
+                                class="child-box">
+
+                                Click Child Division
+
+                            </div>
+                        </div>
+
+                        <div class="slds-m-top_medium output-box">
+                            <strong>Output:</strong>
+
+                            <template for:each={logs} for:item="log">
+                                <div key={log.id}>
+                                    {log.message}
+                                </div>
+                            </template>
+                        </div>
+
+                    </div>
+
+                </lightning-card>
+                
+                
+                <lightning-card title="bubbling in LWC from child to parent">
+                    <em> Target is where the event started. target remains same, but currentTarget is which handler is currently being run..
+                    </em>
+
+                    <div class="slds-p-around_medium" onclick={grandParentHandler} data-label="Grand Parent tag handler"> Grand Parent
+                        <div class="slds-p-around_medium" onclick={parentHandler} data-label="Parent tag handler">Parent
+                            <div class="slds-p-around_medium" data-label="child div tag" >
+                                click here at child
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="slds-m-top_medium output-box">
+                            <strong>Output:</strong>
+
+                            <template for:each={logs} for:item="log">
+                                <div key={log.id}>
+                                    {log.message}
+                                </div>
+                            </template>
+                        </div>
+                </lightning-card>
+                </div>
+            </div>
+            
+    </template>

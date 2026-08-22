@@ -1,0 +1,33 @@
+<apex:page controller="CL_0508_CALCULATOR"  tabStyle="Contact" sidebar="false" showHeader="false">
+   
+    <apex:form >
+	<apex:pageblock >
+        <p style="color:Purple; font-size:40px; text-align:center;font-style:SansSerif;">
+                <em>Calculator</em>
+            </p>
+        <br/>
+        <br/>
+    	<apex:pageBlockSection title="Calculator" columns="1" collapsible="false">
+            <p>
+                Please Enter Only Numbers....
+            </p>
+            <apex:inputText label="First Number : "  value="{!Num1}" />
+            <apex:inputText label="Second Number : " value="{!Num2}" />
+            <apex:inputText label="Third Number : "  value="{!Num3}" />
+           
+            <apex:selectRadio value="{!Choice}">
+                <apex:selectOption itemLabel="Greater Number" itemValue="GR"/>
+                <apex:selectOption itemLabel="Smaller Number" itemValue="SM"/>
+            </apex:selectRadio>
+            
+            <apex:commandButton value="CALCULATE" action="{!MyMain}"/>
+            <apex:commandButton value="Clear All" action="{!ClearMe}"/>
+            <p>
+              <b>Result is : {!Result} </b> 
+                <br/>
+                {!ErrorMessage}
+            </p>
+        </apex:pageBlockSection>
+    </apex:pageblock>
+</apex:form>
+</apex:page>

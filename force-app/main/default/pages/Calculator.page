@@ -1,0 +1,56 @@
+<apex:page standardController="Calculator__c" title="Greater and Smaller Number Calculator">
+   
+ 
+    <style>
+        h1{
+            font-Size: 40px;
+        	font-style: Sans-Serif;
+            margin-left: 15%;
+            margin-right: 35%;
+        	Color: IndianRed;
+                	
+        }
+       
+    </style>
+    
+    <br/>
+    <h1>The Greater and Smaller Number Calculator</h1>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <apex:form >
+       <apex:pageBlock >
+      
+         <apex:pageblocksection >
+             
+     	      <apex:inputField value="{!Calculator__c.First_Number__c}" label="Enter First Number : " id="FirstNumber"  />
+               
+                <br/>  
+                <br/>
+                <br/>
+              <apex:inputField value="{!Calculator__c.Second_Number__c}" label="Enter Second Number : " id="SecondNumber" />
+               
+         	    <br/>  
+                <br/>
+                <br/>
+              <apex:inputField value="{!Calculator__c.Third_Number__c}" label="Enter Third Number : " id="ThirdNumber"   />
+              
+                <br/>  
+                <br/>
+                <br/>
+       
+           <apex:selectRadio label="Greater number" />
+                <br/>
+                <br/>
+                <br/>
+             
+             <apex:outputField value="" label="Result: "/>
+        </apex:pageblocksection>
+      </apex:pageBlock>
+     
+    
+ </apex:form>
+        
+ 
+</apex:page>

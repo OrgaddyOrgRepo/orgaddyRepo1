@@ -1,0 +1,22 @@
+<aura:component controller="ContactsOfAccount" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	
+	
+    <aura:attribute name="con" type="Contact" default="{'sObjectType':'Contact'}"/>
+    <aura:attribute name="recordId" type="String" />
+    
+    <lightning:card title="Contact Info Form">
+         <lightning:input label="LastName" value="{!v.con.LastName}"/>
+         <lightning:input label="Email" value="{!v.con.Email}"/>
+         <lightning:input label="Phone" value="{!v.con.Phone}"/>     
+    
+    
+    <aura:set attribute="actions">
+            <lightning:button label="submit" onclick="{!c.showme}"/> 
+    </aura:set>
+    
+ </lightning:card>
+
+
+
+
+</aura:component>

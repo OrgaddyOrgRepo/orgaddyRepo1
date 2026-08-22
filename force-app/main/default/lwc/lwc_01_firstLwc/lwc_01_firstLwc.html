@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Toggle Inputp Search Bar">
+        <div class="slds-p-around_large">
+            <lightning-button label="Show Search Bar" variant="succes" onclick={letMeSearch}>
+            </lightning-button>
+            <template if:true={showInput}>
+                <lightning-input type="search"></lightning-input> 
+            </template>
+        </div>
+    </lightning-card>
+</template>

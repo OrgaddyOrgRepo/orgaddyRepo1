@@ -1,0 +1,3 @@
+<apex:page controller="ViewAndCreateCasesController" sidebar="false">
+
+</apex:page>
