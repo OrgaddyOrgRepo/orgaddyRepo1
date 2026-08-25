@@ -1,35 +1,15 @@
-public class accountTriggerHandler 
+public class accountTriggerHandler extends triggerHandler
 {
-	public static void accountAfterUpdate(List<Account> newAccList , Map<Id,Account> oldAccMap)    
+	 protected override void beforeDelete()
     {
-        	 List<Contact> conList = [SELECT Id, Firstname,lastname,mailingCity,AccountId FROM Contact WHERE accountId  IN :newAccList ];
-        map<id,List<contact>> accConMap = New map<id,List<contact>>();  // accountId, related contacts
-        List<Contact> contactstoUpdate = New List<Contact>();
-        for(contact con : conList)
-        {
-            if(! accConMap.containsKey(con.AccountId)) // account id does not exist in map as key
-            {
-                accConMap.put(con.AccountId, New List<Contact>());
-                accConMap.get(con.AccountId).add(con); // value --- list<Conatct>
-            }
-            else
-            {
-                accConMap.get(con.AccountId).add(con);
-            }
-        }
+        // If account is being deleted, throw error if it is not archived.
         
-        for(Account acc : newAccList )
+        for(account acc : Trigger.old)
         {
-            if(oldAccMap.get(acc.id).billingCity != acc.BillingCity)
+            if(!acc.Is_archived__c)
             {
-                for(contact con : accConMap.get(acc.id))
-                {
-                    con.MailingCity = acc.BillingCity;
-                    contactstoUpdate.add(con);
-                }
-                
+                acc.addError('The account is not archived. So it cannot be deleted!');
             }
         }
-    update contactstoUpdate;
     }
 }

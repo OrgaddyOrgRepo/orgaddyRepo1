@@ -1,42 +1,14 @@
-// context variable
-// new, newMap , old,oldMap   ===> data
-// trigger.old ===> old copy of data in list format
-// trigger.oldMap ===> old copy of data in map format
-// trigger.New ==> new copy of data in list format
-// trigger.NewMap ==> new copy of data in map format
+/* Using Trigger Frmaework*/
 
 
-trigger AccountTutorialTrigger on Account (after update) 
+trigger AccountTutorialTrigger on Account (before insert,
+                                            before update,
+                                            before delete,
+                                            after insert,
+                                            after update,
+                                            after delete,
+                                            after undelete)
+
 {
-	if(trigger.isUpdate && trigger.isAfter)
-    {
-       
-    	accountTriggerHandler.accountAfterUpdate(Trigger.New, Trigger.OldMap);
-    }
+   new accountTriggerHandler().run();
 }
-/*
-  for(Account acc : trigger.new)
-   {
-       //check if billing city has changed or not
-       for(account accrec : trigger.old)
-       {
-           	if(accrec.id == acc.id)
-            {
-                if(accrec.BillingCity != acc.BillingCity)
-                {
-                    //then get his billing and map on contact
-                    for(Contact con : conList)
-                    {	
-                        if(con.accountId == acc.id)
-                        {
-                            con.mailingCity = acc.BillingCity;
-                           
-                        }
-                    }
-                }
-            }
-       }
-   }
-    update conList;
-    }
- */
