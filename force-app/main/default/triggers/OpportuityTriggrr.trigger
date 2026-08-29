@@ -1,11 +1,6 @@
-trigger OpportuityTriggrr on Opportunity (after  update) 
+trigger OpportuityTriggrr on Opportunity (after insert, after delete, after undelete) 
 {
-    if(trigger.isUpdate)
-    {
-        if(trigger.isAfter)
-        {
-
-        }
-    }
+    
+    New FSL_OpportunityTriggerHandler().run();
     
 }
