@@ -45,13 +45,13 @@ public void run()
 }
 
 
-Public Protected virtual void beforeInsert(){}
-Public Protected virtual void beforeUpdate(){}
-Public Protected virtual void beforeDelete(){}
+ Protected virtual void beforeInsert(){}
+ Protected virtual void beforeUpdate(){}
+ Protected virtual void beforeDelete(){}
 //Public Protected virtual void beforeUndelete(){}// As the rec does not exist in database before undelete
-Public Protected virtual void afterInsert(){}
-Public Protected virtual void afterUpdate(){}
-Public Protected virtual void afterDelete(){}
-Public Protected virtual void afterUndelete(){}
+ Protected virtual void afterInsert(){}
+ Protected virtual void afterUpdate(){}
+ Protected virtual void afterDelete(){}
+ Protected virtual void afterUndelete(){}
     
 }
